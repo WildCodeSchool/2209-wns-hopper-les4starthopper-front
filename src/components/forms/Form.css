@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.form {
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10;
+  border: 1px solid #6457a6;
+  width: 700px;
+  height: 500px;
+  background-color: white;
+  filter: drop-shadow(15px 15px 4px rgba(100, 87, 166, 0.25));
+}
+
+h2 {
+  color: #032425;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #032425;
+  font-size: 20px;
+  line-height: 25px;
+  width: 450px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #6457a6;
+  text-align: center;
+}
+
+.btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: #98c9a3;
+  border-radius: 5px;
+  height: 35px;
+  width: 150px;
+  color: #032425;
+  border: 2px solid transparent;
+}
+
+.btn-signup {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: #98c9a3;
+  border-radius: 5px;
+  height: 35px;
+  width: 190px;
+  color: #032425;
+  border: 2px solid transparent;
+  margin-bottom: 92px;
+}
