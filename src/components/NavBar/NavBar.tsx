@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import ConnexionBtn from "../ConnexionBtn/ConnexionBtn";
 import Logo from "../Logo/Logo";
 import "./navBar.css";
 
-function NavBar() {
+export default function NavBar() {
 	const [toggleMenu, setToggleMenu] = useState(true);
 	const [screenXWidth, setScreenXWidth] = useState(window.innerWidth);
 
@@ -28,6 +29,8 @@ function NavBar() {
 		};
 	}, []);
 
+
+	
 	return (
 		<nav className='navBar'>
 			{(toggleMenu || screenXWidth > 1060) && (
@@ -35,11 +38,10 @@ function NavBar() {
 					<Logo />
 
 					<ul className='navList'>
-						<li className={['items', 'active'].join(' ')}><a href="/">Accueil</a></li>
-						<li className={['items', 'active'].join(' ')}><a href="/cities">Villes</a></li>
-						<li className={['items', 'active'].join(' ')}><a href="/contact">Contact</a></li>
+						<CustomLink to='/'>Accueil</CustomLink>
+						<CustomLink to='/cities'>Villes</CustomLink>
+						<CustomLink to='/contact'>Contact</CustomLink>
 					</ul>
-					
 					<ConnexionBtn />
 				</div>
 			)}
@@ -51,4 +53,14 @@ function NavBar() {
 	);
 }
 
-export default NavBar;
+function CustomLink({ to, children, ...props }) {
+	const resolvedPath = useResolvedPath(to)
+	const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+	return (
+		<li className={[ isActive ? 'active' : '', 'items'].join(' ')}>
+			<Link to={to} {...props}>
+				{children}
+			</Link>
+		</li>
+	);
+}
