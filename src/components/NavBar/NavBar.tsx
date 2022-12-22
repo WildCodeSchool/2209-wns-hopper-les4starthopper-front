@@ -35,9 +35,9 @@ function NavBar() {
 					<Logo />
 
 					<ul className='navList'>
-						<li className='items'>Accueil</li>
-						<li className='items'>Villes</li>
-						<li className='items'>Contact</li>
+						<li className={['items', 'active'].join(' ')}><a href="/">Accueil</a></li>
+						<li className={['items', 'active'].join(' ')}><a href="/cities">Villes</a></li>
+						<li className={['items', 'active'].join(' ')}><a href="/contact">Contact</a></li>
 					</ul>
 					
 					<ConnexionBtn />

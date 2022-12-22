@@ -33,6 +33,23 @@
   display:none;
 }
 
+.navBar li.active{
+  background: #555;
+}
+
+.navBar li:hover{
+  color:#68ae62;
+}
+
+
+.navBar a{
+  text-decoration:none;
+  color: inherit;
+}
+
+
+
+
 @media screen and (max-width: 1060px){
 
   .mainNavBox{
