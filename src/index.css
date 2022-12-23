@@ -29,12 +29,12 @@ code {
 	align-items: center;
 }
 
-.mainContainer {
+/* .mainContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 95%;
 	height: 100px;
 	text-align: center;
-	/* background: rgb(200, 200, 238); */
-}
+	background: rgb(200, 200, 238); 
+} */
