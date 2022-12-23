@@ -6,8 +6,8 @@ import "./map.css";
 function Map(){
 
 return(
-  <><div>
-    <MapContainer className="map-home" center={[46.083852, 2.508206]} zoom={7} scrollWheelZoom={false}>
+  <div className= "map-div">
+    <MapContainer className="map-container" center={[46.083852, 2.508206]} zoom={7} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -19,7 +19,7 @@ return(
       </Marker>
     </MapContainer>
     </div>
-  </>
+  
 )
 }
 

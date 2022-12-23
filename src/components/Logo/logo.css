@@ -1,0 +1,16 @@
+.logoBox{
+  display:flex;
+  position:absolute;
+  width:100px;
+  height:100px;
+  left:65px;
+  top:30px;
+  background:orange;
+}
+
+@media screen and (max-width: 1060px){
+  .logoBox{
+   display:none;
+  } 
+ }
+ 
