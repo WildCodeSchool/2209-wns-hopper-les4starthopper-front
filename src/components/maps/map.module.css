@@ -1,11 +1,12 @@
 
 
-.map-div{
+.mapDiv{
+    margin-top: 5rem;
     width: 500px;
     height: 500px;
 }
 
-.map-container{
+.mapContainer{
     width:100%;
     height:100%;
 }

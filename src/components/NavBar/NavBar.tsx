@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import ConnexionBtn from "../ConnexionBtn/ConnexionBtn";
 import Logo from "../Logo/Logo";
-import "./navBar.css";
+import s from "./navBar.module.css";
+
 
 export const links = [
 	{ label: "Accueil", path: "/" },
@@ -36,12 +37,12 @@ export default function NavBar() {
 	}, []);
 
 	return (
-		<nav className='navBar'>
+		<nav className={s.navBar}>
 			{(toggleMenu || screenXWidth > 1060) && (
-				<div className='mainNavBox'>
+				<div className={s.mainNavBox}>
 					<Logo />
 
-					<ul className='navList'>
+					<ul className={s.navList}>
 						{links.map((link) => (
 							<CustomLink to={link.path} key={link.label}>{link.label}</CustomLink>
 						))}
@@ -50,7 +51,7 @@ export default function NavBar() {
 				</div>
 			)}
 
-			<button onClick={toggleSmallDevice} className='burgerCross'>
+			<button onClick={toggleSmallDevice} className={s.burgerCross}>
 				X
 			</button>
 		</nav>

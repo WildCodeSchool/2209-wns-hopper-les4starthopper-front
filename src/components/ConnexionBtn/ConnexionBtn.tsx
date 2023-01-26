@@ -1,10 +1,10 @@
 import React from 'react'
-import './connexionBtn.css'
+import s from './connexionBtn.module.css'
 
 function ConnexionBtn() {
   return (
     <>
-    <button className='connexionBtn'>Connexion</button>
+    <button className={s.connexionBtn}>Connexion</button>
     </>
   )
 }

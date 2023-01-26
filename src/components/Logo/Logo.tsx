@@ -1,10 +1,10 @@
 import React from 'react'
-import './logo.css'
+import s from './logo.module.css'
 import CityLogo from '../../assets/cityGuideLogo.png'
 
 const Logo = () => {
   return (
-    <div className='logoBox'>
+    <div className={s.logoBox}>
       <img src={CityLogo} alt="" />
     </div>
   )
