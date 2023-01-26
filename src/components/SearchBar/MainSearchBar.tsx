@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import styles from "./mainSearchBar.module.css";
+import mapPointer from "../../assets/mapPointer.svg";
 
 interface IData {
 	link: string;
@@ -34,7 +35,7 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 					placeholder={placeholder}
 				/>
 				<div className={styles.searchIcon}>
-					<div className={styles.lens}>Lens</div>
+					<img src={mapPointer} alt='mapsearch' />
 				</div>
 			</div>
 

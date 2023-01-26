@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.6",
     "graphql": "^16.6.0",
     "leaflet": "^1.9.3",
+    "node-sass": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.0",

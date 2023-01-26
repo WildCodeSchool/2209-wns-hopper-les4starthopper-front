@@ -6,8 +6,10 @@ import NavBar from "./components/NavBar/NavBar";
 import Cities from "./components/pages/Cities";
 import Contact from "./components/pages/Contact";
 import Main from "./components/pages/Main";
+import DocData from './components/Data.json'
 
 import Home from "./components/Home"
+import { MainSearchBar } from "./components/SearchBar/MainSearchBar";
 
 
 
@@ -21,6 +23,10 @@ function App() {
   return (
 <div className='mainBox'>
     <NavBar />
+    <MainSearchBar
+							placeholder='Entrez votre requête ici...'
+							data={DocData}
+						/>
     <div className='mainContainer'>
       <Routes>
         <Route path="/home" element={<Home/>} />

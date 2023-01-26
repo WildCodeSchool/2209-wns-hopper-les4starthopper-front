@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import ConnexionBtn from "../ConnexionBtn/ConnexionBtn";
 import Logo from "../Logo/Logo";
+import { MainSearchBar } from "../SearchBar/MainSearchBar";
 import s from "./navBar.module.css";
-
+import DocData from "../Data.json";
 
 export const links = [
 	{ label: "Accueil", path: "/" },
@@ -44,7 +45,9 @@ export default function NavBar() {
 
 					<ul className={s.navList}>
 						{links.map((link) => (
-							<CustomLink to={link.path} key={link.label}>{link.label}</CustomLink>
+							<CustomLink to={link.path} key={link.label}>
+								{link.label}
+							</CustomLink>
 						))}
 					</ul>
 					<ConnexionBtn />
