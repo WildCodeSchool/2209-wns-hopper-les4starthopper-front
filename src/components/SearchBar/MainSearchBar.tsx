@@ -4,7 +4,7 @@ import mapPointer from "../../assets/mapPointer.svg";
 
 interface IData {
 	link: string;
-	title: string;
+	city: string;
 }
 
 interface IProps {
@@ -18,7 +18,7 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 	const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {
 		const enteredWord = event.target.value;
 		const newFilter = data.filter((value) => {
-			return value.title
+			return value.city
 				.toLowerCase()
 				.includes(enteredWord.toLowerCase());
 		});
@@ -50,7 +50,7 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 								target='_blank'
 								rel='noreferrer'
 							>
-								<p>{value.title}</p>
+								<p>{value.city}</p>
 							</a>
 						);
 					})}
