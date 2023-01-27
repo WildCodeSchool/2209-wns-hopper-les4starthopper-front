@@ -43,7 +43,7 @@ export default function NavBar() {
 				<div className={s.mainNavBox}>
 					<Logo />
 
-					<ul className={s.navList}>
+					<ul className={[s.navList, s.smallNavList].join(" ")}>
 						{links.map((link) => (
 							<CustomLink to={link.path} key={link.label}>
 								{link.label}
