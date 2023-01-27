@@ -10,6 +10,7 @@ import DocData from './components/Data.json'
 
 import Home from "./components/Home"
 import { MainSearchBar } from "./components/SearchBar/MainSearchBar";
+import WelcomeTitle from "./components/WelcomeTitle/WelcomeTitle";
 
 
 
@@ -23,6 +24,7 @@ function App() {
   return (
 <div className='mainBox'>
     <NavBar />
+    <WelcomeTitle />
     <MainSearchBar
 							placeholder='Entrez votre requête ici...'
 							data={DocData}

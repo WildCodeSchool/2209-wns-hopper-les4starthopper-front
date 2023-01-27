@@ -7,7 +7,7 @@ function Map(){
 
 return(
   <div className= {s.mapDiv}>
-    <MapContainer className={s.mapContainer} center={[46.083852, 2.508206]} zoom={7} scrollWheelZoom={false}>
+    <MapContainer className={s.mapContainer} center={[46.083852, 2.508206]} zoom={7} scrollWheelZoom={false} style={{zIndex: 1}}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"

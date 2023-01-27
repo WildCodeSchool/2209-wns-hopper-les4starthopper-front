@@ -7,10 +7,7 @@ import { MainSearchBar } from "./SearchBar/MainSearchBar";
 function Home() {
 	return (
 		<>
-		<MainSearchBar
-				placeholder='Entrez votre requête ici...'
-				data={DocData}
-			/>
+		<div className=""></div>
 		<div className='mainContainer'>
 			<Map />
 		</div>

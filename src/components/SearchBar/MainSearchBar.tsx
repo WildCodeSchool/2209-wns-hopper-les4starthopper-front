@@ -40,6 +40,7 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 			</div>
 
 			{filteredRow.length !== 0 && (
+				<div className={styles.resultBox}>
 				<div className={styles.dataResult}>
 					{filteredRow.slice(0, 10).map((value, key) => {
 						return (
@@ -53,6 +54,7 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 							</a>
 						);
 					})}
+				</div>
 				</div>
 			)}
 		</div>
