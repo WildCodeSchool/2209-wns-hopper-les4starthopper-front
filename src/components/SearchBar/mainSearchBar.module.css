@@ -86,3 +86,15 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+@media screen and (max-width: 1060px) {
+	.searchInputs input {	
+		width: 35em;			
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.searchInputs input {	
+		width: 20em;		
+	}
+}

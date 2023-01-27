@@ -8,10 +8,17 @@
   font-size:2em; 
   font-weight: 700;
   text-transform: uppercase;
-  color:#032425
+  color:#032425;  
 }
 
 .welcomeTitle span {
   
   color: #026a5a;
+}
+
+@media screen and (max-width: 750px) {
+	.welcomeTitle  {	
+		font-size:1.3em;	
+    height: 120px;	
+	}
 }

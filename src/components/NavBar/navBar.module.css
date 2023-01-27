@@ -1,79 +1,70 @@
-.navBar{
-  width:100%;
-  height:80px;
-  line-height: 40px;
-  box-shadow: 0px 4px 2px -2px #032425; 
-  font-size: 1.5rem; 
+.navBar {
+	width: 100%;
+	height: 80px;
+	line-height: 40px;
+	box-shadow: 0px 4px 2px -2px #032425;
+	font-size: 1.5rem;
 }
 
-.mainNavBox{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:80px;
-  position: relative;
+.mainNavBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+	position: relative;
 }
 
 .navList {
-  position: relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
-
-.burgerCross{
-  display:none;
-}
-
-.navBar li:hover{
-  color:#68ae62;
-}
-
-.navBar a{
-  text-decoration:none;
-  color: inherit;
-}
-
-@media screen and (max-width: 1280px) {
-
-}
-
-@media screen and (max-width: 1060px){
-
-  .mainNavBox{
-    display:flex;
-    justify-content: end;     
-  }
-
-  .navList{ 
-    flex-direction: column;
-    top:6rem;
-    right:10px;
-    border: 2px solid black;
-    background:white;
-  }
 
 .burgerCross {
-  position: absolute;
-  display:block;
-  right: 10px;
-  top: 10px;
-  color: #333;
-  cursor: pointer;
+	display: none;
 }
 
-.searchBar{
-  display:flex;
-  width: 1500px;
-  height:1500px;
-  background:blue;
+.navBar li:hover {
+	color: #68ae62;
 }
 
+.navBar a {
+	text-decoration: none;
+	color: inherit;
 }
 
+@media screen and (max-width: 1060px) {
+	.mainNavBox {
+		display: flex;
+		justify-content: end;
+	}
 
+	.navList {
+		flex-direction: column;
+		top: 6rem;
+		right: 10px;
+		border: 2px solid black;
+		background: white;
+	}
 
+	.burgerCross {
+		position: absolute;
+		display: block;
+		right: 10px;
+		top: 10px;
+		color: #333;
+		cursor: pointer;
+	}
+
+	.searchBar {
+		display: flex;
+		width: 1500px;
+		height: 1500px;
+		background: blue;
+	}
+}
