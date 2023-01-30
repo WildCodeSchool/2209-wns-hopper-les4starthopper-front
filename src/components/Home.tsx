@@ -1,6 +1,6 @@
 import React from "react";
 import Map from "./maps/Map";
-import "./Home.css";
+import "./Home.scss";
 import DocData from "./Data.json";
 import { MainSearchBar } from "./SearchBar/MainSearchBar";
 

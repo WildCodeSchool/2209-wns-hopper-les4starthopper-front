@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './connexionBtn.module.css'
+import s from './connexionBtn.module.scss'
 
 function ConnexionBtn() {
   return (

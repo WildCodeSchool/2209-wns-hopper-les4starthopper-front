@@ -3,7 +3,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import ConnexionBtn from "../ConnexionBtn/ConnexionBtn";
 import Logo from "../Logo/Logo";
 import { MainSearchBar } from "../SearchBar/MainSearchBar";
-import s from "./navBar.module.css";
+import s from "./navBar.module.scss";
 import DocData from "../Data.json";
 
 export const links = [
