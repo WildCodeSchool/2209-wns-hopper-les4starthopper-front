@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
 import Form from "./components/forms/Form";
@@ -8,8 +8,11 @@ import Cities from "./pages/Cities/Cities";
 import Contact from "./pages/Contact/Contact";
 import Signup from "./pages/Signup";
 import Main from "./pages/Main/Main";
+import DocData from './components/Data.json'
 
 import Home from "./components/Home";
+import { MainSearchBar } from "./components/SearchBar/MainSearchBar";
+import WelcomeTitle from "./components/WelcomeTitle/WelcomeTitle";
 
 const client = new ApolloClient({
   uri: "http://localhost:5070",
@@ -21,7 +24,12 @@ function App() {
     <ApolloProvider client={client}>
       <div className="mainBox">
         <NavBar />
-        <div className="mainContainer">
+        <WelcomeTitle />
+    <MainSearchBar
+							placeholder='Entrez votre requête ici...'
+							data={DocData}
+						/>
+    <div className="mainContainer">
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Main />} />

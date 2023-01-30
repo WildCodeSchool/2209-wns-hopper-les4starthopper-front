@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import Signin from "../Signin/Signin";
 import Logo from "../Logo/Logo";
-import "./navBar.css";
+import { MainSearchBar } from "../SearchBar/MainSearchBar";
+import s from "./navBar.module.scss";
+import DocData from "../Data.json";
 
 export const links = [
   { label: "Accueil", path: "/" },
@@ -36,28 +38,28 @@ export default function NavBar() {
     };
   }, []);
 
-  return (
-    <nav className="navBar">
-      {(toggleMenu || screenXWidth > 1060) && (
-        <div className="mainNavBox">
-          <Logo />
+	return (
+		<nav className={s.navBar}>
+			{(toggleMenu || screenXWidth > 1060) && (
+				<div className={s.mainNavBox}>
+					<Logo />
 
-          <ul className="navList">
-            {links.map((link) => (
-              <CustomLink to={link.path} key={link.label}>
-                {link.label}
-              </CustomLink>
-            ))}
-          </ul>
-          <Signin />
-        </div>
-      )}
+					<ul className={[s.navList, s.smallNavList].join(" ")}>
+						{links.map((link) => (
+							<CustomLink to={link.path} key={link.label}>
+								{link.label}
+							</CustomLink>
+						))}
+					</ul>
+					<ConnexionBtn />
+				</div>
+			)}
 
-      <button onClick={toggleSmallDevice} className="burgerCross">
-        X
-      </button>
-    </nav>
-  );
+			<button onClick={toggleSmallDevice} className={s.burgerCross}>
+				X
+			</button>
+		</nav>
+	);
 }
 
 function CustomLink({ to, children, ...props }: { to: string; children: any }) {
