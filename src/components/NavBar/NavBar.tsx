@@ -51,7 +51,7 @@ export default function NavBar() {
 							</CustomLink>
 						))}
 					</ul>
-					<ConnexionBtn />
+					<Signin />
 				</div>
 			)}
 
