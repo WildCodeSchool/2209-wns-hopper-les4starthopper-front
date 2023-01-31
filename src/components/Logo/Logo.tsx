@@ -1,10 +1,10 @@
 import React from "react";
-import s from "./logo.module.scss";
+import "./logo.scss";
 import CityLogo from "../../assets/images/cityGuideLogo.png";
 
 const Logo = () => {
   return (
-    <div className={s.logoBox}>
+    <div className="logoBox">
       <img src={CityLogo} alt="" />
     </div>
   );
