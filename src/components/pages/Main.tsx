@@ -1,8 +1,11 @@
 import React from 'react'
+import Map from "../maps/Map";
 
 const Main = () => {
   return (
-    <div>Accueil</div>
+    <>
+    <Map/>
+    </>
   )
 }
 

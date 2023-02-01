@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import ConnexionBtn from "../ConnexionBtn/ConnexionBtn";
+import Signin from "../../components/ConnexionBtn/SignIn";
 import Logo from "../Logo/Logo";
-import "./navBar.css";
+import { MainSearchBar } from "../SearchBar/MainSearchBar";
+import "./navBar.scss";
+import DocData from "../Data.json";
+import { ModalAuth } from "../ModalAuth/ModalAuth";
 
 export const links = [
 	{ label: "Accueil", path: "/" },
 	{ label: "Villes", path: "/cities" },
 	{ label: "Contact", path: "/contact" },
+	{ label: "Signup", path: "/signup" },
 ];
+
+interface IProps {
+	onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
 
 export default function NavBar() {
 	const [toggleMenu, setToggleMenu] = useState(true);
@@ -38,19 +46,21 @@ export default function NavBar() {
 	return (
 		<nav className='navBar'>
 			{(toggleMenu || screenXWidth > 1060) && (
-				<div className='mainNavBox'>
+				<div className='navBar__mainbox'>
 					<Logo />
 
-					<ul className='navList'>
+					<ul className={"navBar__mainbox__list"}>
 						{links.map((link) => (
-							<CustomLink to={link.path} key={link.label}>{link.label}</CustomLink>
+							<CustomLink to={link.path} key={link.label}>
+								{link.label}
+							</CustomLink>
 						))}
 					</ul>
-					<ConnexionBtn />
+					<Signin />
 				</div>
 			)}
 
-			<button onClick={toggleSmallDevice} className='burgerCross'>
+			<button onClick={toggleSmallDevice} className='navBar__burgerCross'>
 				X
 			</button>
 		</nav>
