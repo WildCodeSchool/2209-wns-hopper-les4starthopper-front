@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState } from "react";
-import styles from "./mainSearchBar.module.scss";
+import "./mainSearchBar.scss";
 import mapPointer from "../../assets/mapPointer.svg";
 
 interface IData {
@@ -27,34 +27,29 @@ export function MainSearchBar({ placeholder, data }: IProps) {
 			: setFilteredRow(newFilter);
 	};
 	return (
-		<div className={styles.searchContainer}>
-			<div className={styles.searchInputs}>
+		<div className='searchBar'>
+			<div className='searchBar__input'>
 				<input
 					onChange={handleFilter}
 					type='text'
 					placeholder={placeholder}
 				/>
-				<div className={styles.searchIcon}>
+				<div className='searchBar__icon'>
 					<img src={mapPointer} alt='mapsearch' />
 				</div>
 			</div>
 
 			{filteredRow.length !== 0 && (
-				<div className={styles.resultBox}>
-				<div className={styles.dataResult}>
-					{filteredRow.slice(0, 10).map((value, key) => {
-						return (
-							<a
-								className={styles.dataBox}
-								href={value.link}
-								target='_blank'
-								rel='noreferrer'
-							>
-								<p>{value.city}</p>
-							</a>
-						);
-					})}
-				</div>
+				<div className='searchBar__result'>
+					<div className='searchBar__result__dataResult'>
+						{filteredRow.slice(0, 10).map((value, key) => {
+							return (
+								<a href={value.link} target='_blank' rel='noreferrer'>
+									{value.city}
+								</a>
+							);
+						})}
+					</div>
 				</div>
 			)}
 		</div>
