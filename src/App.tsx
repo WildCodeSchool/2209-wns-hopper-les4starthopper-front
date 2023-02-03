@@ -1,10 +1,6 @@
 import React from "react";
 import "./App.scss";
-import {
-	ApolloClient,
-	ApolloProvider,
-	InMemoryCache,
-} from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
 import Form from "./components/forms/Form";
 import NavBar from "./components/NavBar/NavBar";
@@ -20,33 +16,33 @@ import WelcomeTitle from "./components/WelcomeTitle/WelcomeTitle";
 import { ModalAuth } from "./components/ModalAuth/ModalAuth";
 
 const client = new ApolloClient({
-	uri: "http://localhost:5070",
-	cache: new InMemoryCache(),
+  uri: "http://localhost:5070",
+  cache: new InMemoryCache(),
 });
 
 function App() {
-	return (
-		<ApolloProvider client={client}>
-			<div className='mainBox'>
-				<NavBar />
-				<WelcomeTitle />
-				<MainSearchBar
-					placeholder='Entrez votre requête ici...'
-					data={DocData}
-				/>
+  return (
+    <ApolloProvider client={client}>
+      <div className="mainBox">
+        <NavBar />
+        <WelcomeTitle />
+        <MainSearchBar
+          placeholder="Entrez votre requête ici..."
+          data={DocData}
+        />
 
-				<div className='mainContainer'>
-					<Routes>
-						<Route path='/home' element={<Home />} />
-						<Route path='/' element={<Main />} />
-						<Route path='/cities' element={<Cities />} />
-						<Route path='/contact' element={<Contact />} />
-						<Route path='/signup' element={<Signup />} />
-					</Routes>
-				</div>
-			</div>
-		</ApolloProvider>
-	);
+        <div className="mainContainer">
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/cities" element={<Cities />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
+      </div>
+    </ApolloProvider>
+  );
 }
 
 export default App;
