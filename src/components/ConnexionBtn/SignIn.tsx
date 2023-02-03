@@ -11,8 +11,6 @@ function ConnexionBtn() {
 
   useEffect(() => {
     const closeModal = (e: any) => {
-      console.log(e);
-
       if (
         e.target.className !== "connexionBtn" &&
         !e.target.classList.contains("modalAuth")
