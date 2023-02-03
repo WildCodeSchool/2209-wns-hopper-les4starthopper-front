@@ -9,7 +9,7 @@ function ConnexionBtn() {
     setShowModal(!showModal);
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     const closeModal = (e: any) => {
       if (
         e.target.className !== "connexionBtn" &&
@@ -21,17 +21,13 @@ function ConnexionBtn() {
     document.body.addEventListener("click", closeModal);
     return () => document.body.removeEventListener("click", closeModal);
   }, []);
-
+ */
   return (
     <>
       <button onClick={handleShowModal} className="connexionBtn">
         Connexion
       </button>
-      {showModal && (
-        <ModalAuth
-          className={showModal === true ? "modal-open" : "modal-closed"}
-        />
-      )}
+      {showModal && <ModalAuth closeModal={handleShowModal} />}
     </>
   );
 }
