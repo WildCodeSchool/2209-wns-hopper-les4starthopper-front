@@ -4,16 +4,16 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
 import Form from "./components/forms/Form";
 import NavBar from "./components/NavBar/NavBar";
-import Cities from "./pages/Cities/Cities";
-import Contact from "./pages/Contact/Contact";
-import Main from "./pages/Main/Main";
+import Cities from "./components/Cities/Cities";
+import Contact from "./components/Contact/Contact";
+import Main from "./components/Main/Main";
 import DocData from "./components/Data.json";
 
 import Home from "./components/Home";
 import { MainSearchBar } from "./components/SearchBar/MainSearchBar";
 import WelcomeTitle from "./components/WelcomeTitle/WelcomeTitle";
 import { ModalAuth } from "./components/ModalAuth/ModalAuth";
-import Signup from "./pages/Signup";
+import Signup from "./components/Signup";
 
 const client = new ApolloClient({
   uri: "http://localhost:5070",
