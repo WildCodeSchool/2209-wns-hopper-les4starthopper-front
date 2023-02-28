@@ -22,6 +22,8 @@ function ConnexionBtn() {
     return () => document.body.removeEventListener("click", closeModal);
   }, []);
  */
+
+  //starting portal
   return (
     <>
       <button onClick={handleShowModal} className="connexionBtn">
