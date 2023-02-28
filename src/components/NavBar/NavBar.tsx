@@ -8,8 +8,7 @@ import DocData from "../Data.json";
 import { ModalAuth } from "../ModalAuth/ModalAuth";
 
 export const links = [
-	{ label: "Accueil", path: "/" },
-	{ label: "Villes", path: "/cities" },
+	{ label: "Accueil", path: "/" },	
 	{ label: "Contact", path: "/contact" },
 	{ label: "Signup", path: "/signup" },
 ];

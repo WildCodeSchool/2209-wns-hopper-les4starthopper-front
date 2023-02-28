@@ -23,10 +23,9 @@
 			padding: 0;
 		}
 	}
-}
-
-.burgerCross {
-	display: none;
+	&__burgerCross {
+		display: none;
+	}
 }
 
 .navBar li:hover {
@@ -40,7 +39,7 @@
 
 @media screen and (max-width: 1060px) {
 	.navBar {
-		& li.active{
+		& li.active {
 			border-bottom: 1px solid #bdb3b3;
 		}
 		&__mainbox {
@@ -64,5 +63,4 @@
 			cursor: pointer;
 		}
 	}
-
 }

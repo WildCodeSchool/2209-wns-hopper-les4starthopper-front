@@ -38,8 +38,7 @@ function App() {
 				<div className='mainContainer'>
 					<Routes>
 						<Route path='/home' element={<Home />} />
-						<Route path='/' element={<Main />} />
-						<Route path='/cities' element={<Cities />} />
+						<Route path='/' element={<Main />} />						
 						<Route path='/contact' element={<Contact />} />
 						<Route path='/signup' element={<Signup />} />
 					</Routes>
