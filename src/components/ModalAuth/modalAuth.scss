@@ -4,7 +4,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffff65;
+  background: #ffffff04;
   padding: 50px;
   z-index:1000;
 }
@@ -27,25 +27,18 @@
 
 /*----------------------------*/
 
-
-
-.modalAuth-component {
-  width: 1200px;
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #026a5a;
-  opacity: 0.3;
-  // position: relative;
-  position:fixed;
+.modalAuth-component {  
+  position: fixed;
+  opacity: 0.9;  
   top: 50%;
-  left:50%;
-  // top: auto;
-  // right: 50%;
-  transform: translate(50%, 60%);
-  z-index: 1000;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffffd5;
+  padding: 50px;
+  z-index:100;
 }
+
+
 
 .modalAuth-body {
   display: flex;

@@ -18,13 +18,13 @@ export const ModalAuth = ({ open, children, onClose }: IProps) => {
 			<div className='overlay_styles' />
 
 			<div className='modal_styles'>
-				<button onClick={onClose}>Close Modal</button>
 				{children}
 				hello
 				<div className='redtest'>
 					<div className='modalAuth-component'>
 						<div className='modalAuth-body'>
 							<div className='modalAuth__title'>Se connecter</div>
+              <button onClick={onClose}>Close Modal</button>
 							<div className='modalAuth__mode'>
 								Pas de compte ? <span>S'inscrire</span>
 							</div>
