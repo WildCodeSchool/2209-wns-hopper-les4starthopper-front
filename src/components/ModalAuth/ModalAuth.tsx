@@ -157,41 +157,4 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 	);
 };
 
-// <div className="modalAuth-component">
-// <div className={`modalAuth-body`}>
-// 	<div className="modalAuth__title">Se connecter</div>
-// 	<div className="modalAuth__mode">
-// 		Pas de compte ? <span onClick={changeAuthMode}>S'inscrire</span>
-// 	</div>
-// 	<div className="modalAuth__input">
-// 		<div className="modalAuth__signup-input">
-// 			<label htmlFor="email">Email</label>
-// 			<input
-// 				disabled={loading}
-// 				type="email"
-// 				name="email"
-// 				value={email}
-// 				onChange={(e) => {
-// 					setEmail(e.target.value);
-// 				}}
-// 			/>
-// 			<label htmlFor="password">Mot de passe</label>
-// 			<input
-// 				disabled={loading}
-// 				type="password"
-// 				name="password"
-// 				value={password}
-// 				onChange={(e) => {
-// 					setPassword(e.target.value);
-// 				}}
-// 			/>
-// 		</div>
-// 		<div className="modalAuth__submit">
-// 			<button onClick={handleSignup}>Se connecter</button>
-// 			<div className="modalAuth__submit__forgotPassword">
-// 				<a href="test"> Mot de passe oublié ? </a>
-// 			</div>
-// 		</div>
-// 	</div>
-// </div>
-// </div>
+
