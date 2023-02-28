@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
@@ -13,7 +13,7 @@ import DocData from "./components/Data.json";
 import Home from "./components/Home";
 import { MainSearchBar } from "./components/SearchBar/MainSearchBar";
 import WelcomeTitle from "./components/WelcomeTitle/WelcomeTitle";
-import { ModalAuth } from "./components/ModalAuth/ModalAuth";
+import { Modal } from "./components/ModalAuth/Modal";
 
 const client = new ApolloClient({
   uri: "http://localhost:5070",
@@ -21,10 +21,12 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [visible, setVisible] = useState(false);
   return (
     <ApolloProvider client={client}>
       <div className="mainBox">
-        <NavBar />
+        <NavBar ModalVisible={setVisible} visible={visible} />
+        {visible && <Modal isVisible={visible} backDrop={setVisible} />}
         <WelcomeTitle />
         <MainSearchBar
           placeholder="Entrez votre requête ici..."
