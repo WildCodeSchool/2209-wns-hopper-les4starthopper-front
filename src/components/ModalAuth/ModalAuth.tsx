@@ -44,14 +44,16 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 
 			<div className='modalAuth-component'>
 				<div className={`modalAuth-body`}>
-					<div className='modalAuth__title'>S'inscrire</div>
-					<div className='modalAuth__mode'>
-						Déjà enregistré ?{" "}
-						<span onClick={changeAuthMode}>Se connecter</span>
+					<div className='close'>
+					<button onClick={onClose} >X</button>
 					</div>
+					<div className='modalAuth__title'>S'inscrire</div>
+		
 					<div className='modalAuth__input'>
 						<div className='modalAuth__signin-input'>
-							<label htmlFor='email'>Email</label>
+							<label className='modalAuth__label' htmlFor='email'>
+								Email
+							</label>
 							<input
 								disabled={loading}
 								type='email'
@@ -61,7 +63,9 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 									setEmail(e.target.value);
 								}}
 							/>
-							<label htmlFor='password'>Mot de passe</label>
+							<label className='modalAuth__label' htmlFor='password'>
+								Mot de passe
+							</label>
 							<input
 								disabled={loading}
 								type='password'
@@ -74,8 +78,16 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 						</div>
 						<div className='modalAuth__submit'>
 							<button onClick={handleSignup}>Créer un compte</button>
-							<button onClick={onClose}>Close Modal</button>
 						</div>
+						<div className='modalAuth__mode'>
+						Déjà enregistré ?{" "}
+						<span
+							className='modalAuth__span'
+							onClick={changeAuthMode}
+						>
+							Se connecter
+						</span>
+					</div>
 					</div>
 				</div>
 			</div>
