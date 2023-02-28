@@ -30,6 +30,7 @@ function App() {
           placeholder="Entrez votre requête ici..."
           data={DocData}
         />
+		
 
 				<div className='mainContainer'>
 					<Routes>

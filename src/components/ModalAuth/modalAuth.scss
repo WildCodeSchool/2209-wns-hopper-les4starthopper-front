@@ -1,3 +1,34 @@
+/*TEST ZONE------------------*/
+.modal_styles{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff65;
+  padding: 50px;
+  z-index:1000;
+}
+
+.overlay_styles{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(0,0,0,.7);
+  z-index:1000;
+}
+
+.redtest{
+  width:500px;
+  height:500px;  
+  background:rgba(255, 0, 0, 0.131);
+}
+
+/*----------------------------*/
+
+
+
 .modalAuth-component {
   width: 1200px;
   height: 70vh;
@@ -6,11 +37,14 @@
   align-items: center;
   background-color: #026a5a;
   opacity: 0.3;
-  position: relative;
-  top: auto;
-  right: 50%;
+  // position: relative;
+  position:fixed;
+  top: 50%;
+  left:50%;
+  // top: auto;
+  // right: 50%;
   transform: translate(50%, 60%);
-  z-index: 2;
+  z-index: 1000;
 }
 
 .modalAuth-body {

@@ -3,34 +3,23 @@ import { ModalAuth } from "../ModalAuth/ModalAuth";
 import "./SignIn.scss";
 
 function ConnexionBtn() {
-  const [showModal, setShowModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
-  const handleShowModal = () => {
-    setShowModal(!showModal);
-  };
-
-  /* useEffect(() => {
-    const closeModal = (e: any) => {
-      if (
-        e.target.className !== "connexionBtn" &&
-        !e.target.classList.contains("modalAuth")
-      ) {
-        setShowModal(false);
-      }
-    };
-    document.body.addEventListener("click", closeModal);
-    return () => document.body.removeEventListener("click", closeModal);
-  }, []);
- */
-
-  //starting portal
   return (
     <>
-      <button onClick={handleShowModal} className="connexionBtn">
+    <div className="button_wrapper_styles" >
+      <button className="connexionBtn" onClick={() => setIsOpen(true)} >
         Connexion
       </button>
-      {showModal && <ModalAuth closeModal={handleShowModal} />}
-    </>
+    </div>
+      {/* <ModalAuth /> */}
+
+      <ModalAuth open={isOpen} onClose={() => setIsOpen(false)}>
+        This is a modal
+      </ModalAuth>
+   </>
+
+
   );
 }
 
