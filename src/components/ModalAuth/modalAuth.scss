@@ -1,4 +1,16 @@
 /*TEST ZONE------------------*/
+
+.overlay_styles{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(0,0,0,.7);
+  z-index:999;
+}
+
+
 .modal_styles{
   position: fixed;
   top: 50%;
@@ -9,15 +21,7 @@
   z-index:1000;
 }
 
-.overlay_styles{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background: rgba(0,0,0,.7);
-  z-index:1000;
-}
+
 
 /*----------------------------*/
 
@@ -29,7 +33,7 @@
   transform: translate(-50%, -50%);
   background-color: #026a5a;
   padding: 50px;
-  z-index:100;
+  z-index:1000;
 }
 
 

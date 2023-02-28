@@ -14,9 +14,7 @@ function ConnexionBtn() {
     </div>
       {/* <ModalAuth /> */}
 
-      <ModalAuth open={isOpen} onClose={() => setIsOpen(false)}>
-        This is a modal
-      </ModalAuth>
+      <ModalAuth open={isOpen} onClose={() => setIsOpen(false)} />
    </>
 
 
