@@ -19,21 +19,15 @@
   z-index:1000;
 }
 
-.redtest{
-  width:500px;
-  height:500px;  
-  background:rgba(255, 0, 0, 0.131);
-}
-
 /*----------------------------*/
 
-.modalAuth-component {  
+.modalAuth-component { 
   position: fixed;
   opacity: 0.9;  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #ffffffd5;
+  background-color: #026a5a;
   padding: 50px;
   z-index:100;
 }
