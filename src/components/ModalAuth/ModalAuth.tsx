@@ -10,7 +10,7 @@ export interface IProps {
 	onClose: any;
 }
 
-export const ModalAuth = ({ open, children, onClose }: IProps) => {
+export const ModalAuth = ({ open, children, onClose, ...props }: IProps) => {
 	if (!open) return null;
 
 	return ReactDOM.createPortal(
