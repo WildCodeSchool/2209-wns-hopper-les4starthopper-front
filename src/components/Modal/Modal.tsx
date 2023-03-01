@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 export interface IProps {
 	open: boolean;
-	onClose: any;
+	onClose: () => void;
   children: React.ReactNode;
 }
 
