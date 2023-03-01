@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./modalAuth.scss";
-import { createUser } from "../../graphql/createUser";
+import { createUser } from "../../graphql/users.server";
 import { useMutation } from "@apollo/client";
 
 export const Modal = ({ isVisible, backDrop }: any) => {
