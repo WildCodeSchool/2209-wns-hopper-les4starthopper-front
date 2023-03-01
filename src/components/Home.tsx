@@ -7,10 +7,10 @@ import { MainSearchBar } from "./SearchBar/MainSearchBar";
 function Home() {
 	return (
 		<>
-		<div className=""></div>
-		<div className='mainContainer'>
-			<Map />
-		</div>
+			<div className=''></div>
+			<div className='mainContainer'>
+				<Map />
+			</div>
 		</>
 	);
 }
