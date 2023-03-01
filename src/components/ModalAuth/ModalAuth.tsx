@@ -1,12 +1,12 @@
 import React, { useState, ReactNode } from "react";
 import "./modalAuth.scss";
-import ReactDOM from "react-dom";
 import { createUser } from "../../graphql/createUser";
 import { useMutation } from "@apollo/client";
+import Modal from "../Modal/Modal"
 
 export interface IProps {
 	open: boolean;
-	onClose: any;
+	onClose: any;	
 }
 
 export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
@@ -35,17 +35,11 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 	};
 
 	if (!open) return null;
-	//refacto starting point
 	// if (authMode === "signup") {
-		return ReactDOM.createPortal(
+		return (
 			<>
-				<div className='overlay_styles' />
-
-				<div className='modalAuth-component'>
-					<div className={`modalAuth-body`}>
-						<div className='close'>
-							<button onClick={onClose}>X</button>
-						</div>
+				<Modal onClose={onClose} open={open}  >
+				<>
 						<div className='modalAuth__title'>S'inscrire</div>
 
 						<div className='modalAuth__input'>
@@ -93,10 +87,9 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 								</span>
 							</div>
 						</div>
-					</div>
-				</div>
-			</>,
-			document.querySelector("#portal") as Element
+          </>
+				</Modal>
+			</>
 		);
 		}
 	// }

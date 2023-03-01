@@ -11,8 +11,7 @@ function ConnexionBtn() {
       <button className="connexionBtn" onClick={() => setIsOpen(true)} >
         Connexion
       </button>
-    </div>
-      {/* <ModalAuth /> */}
+    </div>     
 
       <ModalAuth open={isOpen} onClose={() => setIsOpen(false)} />
    </>
