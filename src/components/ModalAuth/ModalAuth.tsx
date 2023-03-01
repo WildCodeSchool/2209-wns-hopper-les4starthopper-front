@@ -35,7 +35,7 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 	};
 
 	if (!open) return null;
-	// if (authMode === "signup") {
+	 if (authMode === "signup") {
 		return (
 			<>
 				<Modal onClose={onClose} open={open}  >
@@ -91,65 +91,55 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 				</Modal>
 			</>
 		);
-		}
-	// }
+		} else {
 
-// 	return ReactDOM.createPortal(
-// 		<>
-// 			<div className='overlay_styles' />
+	 return (
+			<>
+				<Modal onClose={onClose} open={open}  >
+				<>
+						<div className='modalAuth__title'>Se connecter</div>
 
-// 			<div className='modalAuth-component'>
-// 				<div className={`modalAuth-body`}>
-// 					<div className='close'>
-// 						<button onClick={onClose}>X</button>
-// 					</div>
-// 					<div className='modalAuth__title'>Se connecter</div>
-
-// 					<div className='modalAuth__input'>
-// 						<div className='modalAuth__signin-input'>
-// 							<label className='modalAuth__label' htmlFor='email'>
-// 								Email
-// 							</label>
-// 							<input
-// 								disabled={loading}
-// 								type='email'
-// 								name='email'
-// 								value={email}
-// 								onChange={(e) => {
-// 									setEmail(e.target.value);
-// 								}}
-// 							/>
-// 							<label className='modalAuth__label' htmlFor='password'>
-// 								Mot de passe
-// 							</label>
-// 							<input
-// 								disabled={loading}
-// 								type='password'
-// 								name='password'
-// 								value={password}
-// 								onChange={(e) => {
-// 									setPassword(e.target.value);
-// 								}}
-// 							/>
-// 						</div>
-// 						<div className='modalAuth__submit'>
-// 							<button onClick={handleSignup}>Créer un compte</button>
-// 						</div>
-// 						<div className='modalAuth__mode'>
-// 							Déjà enregistré ?{" "}
-// 							<span
-// 								className='modalAuth__span'
-// 								onClick={changeAuthMode}
-// 							>
-// 								Se connecter
-// 							</span>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			</div>
-// 		</>,
-// 		document.querySelector("#portal2") as Element
-// 	);
-// };
+						<div className='modalAuth__input'>
+							<div className='modalAuth__signin-input'>
+								<label className='modalAuth__label' htmlFor='email'>
+									Email
+								</label>
+								<input
+									disabled={loading}
+									type='email'
+									name='email'
+									value={email}
+									onChange={(e) => {
+										setEmail(e.target.value);
+									}}
+								/>
+								<label
+									className='modalAuth__label'
+									htmlFor='password'
+								>
+									Mot de passe
+								</label>
+								<input
+									disabled={loading}
+									type='password'
+									name='password'
+									value={password}
+									onChange={(e) => {
+										setPassword(e.target.value);
+									}}
+								/>
+							</div>
+							<div className='modalAuth__submit'>
+								<button onClick={handleSignup}>
+									Connexion
+								</button>
+							</div>
+						</div>
+          </>
+				</Modal>
+			</>
+		);
+	}
+}
 
 

@@ -33,11 +33,10 @@
 	z-index: 1000;
 }
 
-.close{
-  display:flex;
-  justify-content: end;  
-  margin: 1rem;
-  
+.close {
+	display: flex;
+	justify-content: end;
+	margin: 1rem;
 }
 
 .modalAuth-body {
@@ -50,8 +49,7 @@
 	border-radius: 15px;
 	box-shadow: rgba(246, 240, 240, 0.24) 0px 3px 8px;
 
- 
-	.modalAuth__title {	
+	.modalAuth__title {
 		font-weight: 600;
 	}
 
@@ -68,11 +66,11 @@
 	}
 
 	.modalAuth__input input {
-    border: solid rgb(87, 90, 227) 1px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-		width: 90%;   
+		border: solid rgb(87, 90, 227) 1px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		width: 90%;
 	}
 
 	.modalAuth__signup-input,
@@ -81,25 +79,26 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-    margin-bottom: 2em;
+		margin-bottom: 2em;
 	}
 
 	.modalAuth__label {
 		display: block;
-    margin-top: 40px;
+		margin-top: 40px;
 		width: 100%;
 	}
 
-  .modalAuth__submit button{
-    padding: 10px;
-    margin-bottom:5px;
-			width: 50%;
-			font-size: 1.3rem;
-			border: none;
-			border-radius: 10px;
-			background: #FFBA08;
-			color: white;  
-    }
+	.modalAuth__submit button {
+		padding: 10px;
+		margin-top: 1em;
+		margin-bottom: 5px;
+		width: 50%;
+		font-size: 1.3rem;
+		border: none;
+		border-radius: 10px;
+		background: #ffba08;
+		color: white;
+	}
 
 	&__input {
 		& input {
@@ -111,7 +110,6 @@
 	}
 
 	.modalAuth__submit {
-
 		&__forgotPassword {
 			text-align: start;
 			margin-left: 2em;
