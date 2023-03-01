@@ -23,7 +23,7 @@ function Signup() {
       setPassword("");
     } catch {}
   };
-  console.log("****");
+
   return (
     <div className="signup-wrapper">
       <div>
