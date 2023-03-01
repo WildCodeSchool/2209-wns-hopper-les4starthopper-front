@@ -1,7 +1,7 @@
-import { iPointOfInterest } from "./pointofinterest";
-import { iUser } from "./user";
+import { IPointOfInterest } from "./pointofinterest";
+import { IUser } from "./user";
 
-export interface iComment {
+export interface IComment {
   id: number;
   comment: string;
   note: number;
@@ -11,7 +11,7 @@ export interface iComment {
   createdById: number;
   updatedById: number;
   pointOfInterestId: number;
-  createdBy: iUser;
-  updatedBy: iUser;
-  pointOfInterest: iPointOfInterest;
+  createdBy: IUser;
+  updatedBy: IUser;
+  pointOfInterest: IPointOfInterest;
 }

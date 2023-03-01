@@ -1,7 +1,7 @@
-import { iPointOfInterest } from "./pointofinterest";
-import { iUser } from "./user";
+import { IPointOfInterest } from "./pointofinterest";
+import { IUser } from "./user";
 
-export interface iPicture {
+export interface IPicture {
   id: number;
   url: string;
   pointOfInterestId: number;
@@ -9,6 +9,6 @@ export interface iPicture {
   createdById: number;
   created_at: Date;
   updated_at: Date;
-  createdBy: iUser;
-  pointOfInterest: iPointOfInterest;
+  createdBy: IUser;
+  pointOfInterest: IPointOfInterest;
 }

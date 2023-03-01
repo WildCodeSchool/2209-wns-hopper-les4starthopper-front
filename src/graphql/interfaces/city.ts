@@ -1,7 +1,7 @@
-import { iPointOfInterest } from "./pointofinterest";
-import { iUser } from "./user";
+import { IPointOfInterest } from "./pointofinterest";
+import { IUser } from "./user";
 
-export interface iCity {
+export interface ICity {
   id: number;
   name: string;
   latitude: string;
@@ -11,7 +11,7 @@ export interface iCity {
   userId: number;
   createdById: number;
   updatedById: number;
-  createdBy: iUser;
-  updatedBy: iUser;
-  pointOfInterests: iPointOfInterest;
+  createdBy: IUser;
+  updatedBy: IUser;
+  pointOfInterests: IPointOfInterest;
 }

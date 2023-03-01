@@ -6,7 +6,6 @@ import { ISearchbarProps } from "../../interfaces/searchBar";
 
 export function MainSearchBar({ placeholder, data }: ISearchbarProps) {
   const [search, setSearch] = useState<string>("");
-
   const filteredCityData = useSearch(search, data);
 
   return (

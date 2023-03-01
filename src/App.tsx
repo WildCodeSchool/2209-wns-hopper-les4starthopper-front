@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
-import Form from "./components/forms/Form";
 import NavBar from "./components/NavBar/NavBar";
 import Cities from "./pages/Cities/Cities";
 import Contact from "./pages/Contact/Contact";

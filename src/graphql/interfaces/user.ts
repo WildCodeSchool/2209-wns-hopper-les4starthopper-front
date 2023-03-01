@@ -1,10 +1,10 @@
-import { iCategory } from "./category";
-import { iCity } from "./city";
-import { iComment } from "./comment";
-import { iPicture } from "./picture";
-import { iPointOfInterest } from "./pointofinterest";
+import { ICategory } from "./category";
+import { ICity } from "./city";
+import { IComment } from "./comment";
+import { IPicture } from "./picture";
+import { IPointOfInterest } from "./pointofinterest";
 
-export interface iUser {
+export interface IUser {
   email: string;
   password: string;
   role: number;
@@ -13,11 +13,11 @@ export interface iUser {
   updatedById: number;
   created_at: Date;
   updated_at: Date;
-  createdBy: iUser;
-  updatedBy: iUser;
-  comments: iComment;
-  pictures: iPicture;
-  categories: iCategory;
-  pointOfInterests: iPointOfInterest;
-  cities: iCity;
+  createdBy: IUser;
+  updatedBy: IUser;
+  comments: IComment;
+  pictures: IPicture;
+  categories: ICategory;
+  pointOfInterests: IPointOfInterest;
+  cities: ICity;
 }

@@ -1,7 +1,7 @@
-import { iPointOfInterest } from "./pointofinterest";
-import { iUser } from "./user";
+import { IPointOfInterest } from "./pointofinterest";
+import { IUser } from "./user";
 
-export interface iCategory {
+export interface ICategory {
   id: number;
   name: string;
   userId: number;
@@ -10,7 +10,7 @@ export interface iCategory {
   icon: string;
   created_at: Date;
   updated_at: Date;
-  createdBy: iUser;
-  updatedBy: iUser;
-  pointOfInterests: iPointOfInterest;
+  createdBy: IUser;
+  updatedBy: IUser;
+  pointOfInterests: IPointOfInterest;
 }
