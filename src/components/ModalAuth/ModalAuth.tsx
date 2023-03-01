@@ -35,6 +35,7 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 	};
 
 	if (!open) return null;
+	//refacto starting point
 	// if (authMode === "signup") {
 		return ReactDOM.createPortal(
 			<>
