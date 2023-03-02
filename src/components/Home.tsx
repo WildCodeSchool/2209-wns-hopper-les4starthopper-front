@@ -4,6 +4,8 @@ import "./Home.scss";
 import DocData from "./Data.json";
 import { MainSearchBar } from "./SearchBar/MainSearchBar";
 
+//console.log('***')
+
 function Home() {
 	return (
 		<>
