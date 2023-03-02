@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import Signin from "../../components/ConnexionBtn/SignIn";
 import Logo from "../Logo/Logo";
-import { MainSearchBar } from "../SearchBar/MainSearchBar";
+import { SearchBar } from "../SearchBar/SearchBar";
 import "./navBar.scss";
 import DocData from "../Data.json";
 import { ModalAuth } from "../ModalAuth/ModalAuth";
@@ -10,7 +10,7 @@ import { ModalAuth } from "../ModalAuth/ModalAuth";
 export const links = [
 	{ label: "Accueil", path: "/" },
 	{ label: "Villes", path: "/cities" },
-	{ label: "Contact", path: "/contact" }
+	{ label: "Contact", path: "/contact" },
 ];
 
 interface IProps {
@@ -55,6 +55,15 @@ export default function NavBar() {
 							</CustomLink>
 						))}
 					</ul>
+
+					<div className='topBar'>
+						<SearchBar
+							className='navbarSearchbar'
+							placeholder='Entrez'
+							data={[]}
+						/>
+					</div>
+
 					<Signin />
 				</div>
 			)}
