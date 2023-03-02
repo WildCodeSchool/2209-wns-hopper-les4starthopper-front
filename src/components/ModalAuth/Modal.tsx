@@ -1,14 +1,12 @@
+import React, { useState } from "react";
+import "./modalAuth.scss";
+import { createUser } from "../../graphql/users.server";
 import { useMutation } from "@apollo/client";
-import React from "react";
-import { useState } from "react";
 
-import "../assets/styles/Signup.scss";
-import { createUser } from "../graphql/users.server";
-
-function Signup() {
+export const Modal = ({ isVisible, backDrop }: any) => {
+  const [authMode, setAuthMode] = useState("signin");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
   const [handleSignupMutation, { data, loading, error }] =
     useMutation(createUser);
 
@@ -23,11 +21,18 @@ function Signup() {
       setPassword("");
     } catch {}
   };
-  console.log("****");
+
+  const handleVisibility = () => {
+    backDrop(!isVisible);
+  };
+
   return (
-    <div className="signup-wrapper">
-      <div>
-        <div className="signup-input">
+    // <div className="modalWrapper" onClick={handleVisibility}>
+    <div className="modalAuth">
+      <div className="modalAuth__title">Sign-In</div>
+      <div>Pas de compte ? cliquez ici !</div>
+      <div className="modalAuth__input">
+        <div className="modalAuth__signup-input">
           <label htmlFor="email">Email</label>
           <input
             disabled={loading}
@@ -49,17 +54,14 @@ function Signup() {
             }}
           />
         </div>
-        <div className="signup-submit">
-          <button onClick={handleSignup}>Créer un compte</button>
+        <div className="modalAuth__submit">
+          <button onClick={handleSignup}>Valider</button>
+          <div className="modalAuth__submit__forgotPassword">
+            Forgot <a href="test"> password? </a>
+          </div>
         </div>
       </div>
-      <div>
-        {error && (
-          <pre style={{ color: "red" }}>{JSON.stringify(error, null, 4)}</pre>
-        )}
-      </div>
     </div>
+    // </div>
   );
-}
-
-export default Signup;
+};

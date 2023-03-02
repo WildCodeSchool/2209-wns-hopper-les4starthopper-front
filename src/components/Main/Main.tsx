@@ -1,15 +1,15 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
-import Map from "../maps/Map";
+import Map from "../Maps/Map";
 
 import "./Main.scss";
 
 const Main = () => {
-	return (
-		<>
-			<Map />
-		</>
-	);
+    return (
+        <>
+            <Map />
+        </>
+    );
 };
 
 export default Main;

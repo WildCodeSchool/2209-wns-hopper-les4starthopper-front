@@ -1,8 +1,7 @@
-import React from "react";
+import { useState } from "react";
 import "./App.scss";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Route, Routes } from "react-router-dom";
-import Form from "./components/forms/Form";
 import NavBar from "./components/NavBar/NavBar";
 import Cities from "./components/Cities/Cities";
 import Contact from "./components/Contact/Contact";
@@ -30,20 +29,19 @@ function App() {
           placeholder="Entrez votre requête ici..."
           data={DocData}
         />
-		
 
-				<div className='mainContainer'>
-					<Routes>
-						<Route path='/home' element={<Home />} />
-						<Route path='/' element={<Main />} />						
-						<Route path='/contact' element={<Contact />} />
-						<Route path='/cities' element={<Cities />} />
-						<Route path='/signup' element={<Signup />} />
-					</Routes>
-				</div>
-			</div>
-		</ApolloProvider>
-	);
+        <div className="mainContainer">
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cities" element={<Cities />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </div>
+      </div>
+    </ApolloProvider>
+  );
 }
 
 export default App;
