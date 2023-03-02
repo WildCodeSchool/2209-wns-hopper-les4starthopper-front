@@ -5,14 +5,14 @@ import DocData from "./Data.json";
 import { MainSearchBar } from "./SearchBar/MainSearchBar";
 
 function Home() {
-    return (
-        <>
-            <div className=""></div>
-            <div className="mainContainer">
-                <Map />
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className=""></div>
+      <div className="mainContainer">
+        <Map />
+      </div>
+    </>
+  );
 }
 
 export default Home;

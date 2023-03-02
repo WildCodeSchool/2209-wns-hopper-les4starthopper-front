@@ -13,19 +13,19 @@
     height: 80px;
     position: relative;
 
-		&__list {
-			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-	}
-	&__burgerCross {
-		display: none;
-	}
+    &__list {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  &__burgerCross {
+    display: none;
+  }
 }
 
 .navBar li:hover {
