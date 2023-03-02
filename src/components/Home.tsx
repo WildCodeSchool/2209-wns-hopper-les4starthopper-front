@@ -1,20 +1,17 @@
 import React from "react";
 import Map from "../components/Maps/Map";
 import "./Home.scss";
-import DocData from "./Data.json";
-import { MainSearchBar } from "./SearchBar/MainSearchBar";
-
-//console.log('***')
+import WelcomeTitle from "./WelcomeTitle/WelcomeTitle";
 
 function Home() {
-    return (
-        <>
-            <div className=""></div>
-            <div className="mainContainer">
-                <Map />
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div className='mainContainer'>
+			<WelcomeTitle />
+				<Map />
+			</div>
+		</>
+	);
 }
 
 export default Home;
