@@ -1,6 +1,6 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
-import Map from "../Maps/Map";
+import Map from "../maps/Map";
 
 import "./Main.scss";
 
