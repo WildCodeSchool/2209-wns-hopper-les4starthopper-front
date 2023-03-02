@@ -1,4 +1,3 @@
-import React from "react";
 import Map from "../components/Maps/Map";
 import "./Home.scss";
 import WelcomeTitle from "./WelcomeTitle/WelcomeTitle";

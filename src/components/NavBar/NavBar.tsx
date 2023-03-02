@@ -72,7 +72,6 @@ export default function NavBar({ ModalVisible, visible }: any) {
 			)}
 			{window.innerWidth < 992 && (
 				<button
-					onClick={toggleSmallDevice}
 					className='navBar__burgerCross'
 				>
 					X
