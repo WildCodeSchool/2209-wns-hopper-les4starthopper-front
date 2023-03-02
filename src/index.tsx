@@ -15,6 +15,8 @@ const client = new ApolloClient({
 	cache: new InMemoryCache(),
 });
 
+window.BASE_URL = "http://localhost:5070";
+
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
 );
