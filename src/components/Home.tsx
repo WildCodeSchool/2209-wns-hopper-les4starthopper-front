@@ -1,4 +1,4 @@
-import Map from "../components/Maps/Map";
+import Map from "./Maps/Map";
 import "./Home.scss";
 import WelcomeTitle from "./WelcomeTitle/WelcomeTitle";
 
