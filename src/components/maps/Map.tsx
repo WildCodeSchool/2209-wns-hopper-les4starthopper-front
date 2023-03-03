@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css";
 import "./map.scss";
 import { gql, useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 export interface IData {
     longitude: string;
@@ -19,6 +21,14 @@ export interface IProps {
 function Map() {
     const { loading, error, data } = useQuery(getCities);
     console.log(data, error, loading);
+
+    const myIcon = L.icon({
+        iconUrl: 'path/to/my/icon.png',
+        iconSize: [38, 38],
+        iconAnchor: [22, 38],
+        popupAnchor: [-3, -76],
+        });
+
     return (
         <div className="mapDiv">
             <MapContainer
@@ -32,9 +42,7 @@ function Map() {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
                 />
-                {/* {
-                    for(let i; i<)
-                } */}
+
                 {data &&
                     data.Cities.map((city: IData) => {
                         
@@ -45,8 +53,9 @@ function Map() {
                                     parseFloat(city.latitude),
                                     parseFloat(city.longitude),
                                 ]}
+                                icon={myIcon}
                             >
-                                <Popup>{city.name}</Popup>
+                                {/* <Popup>{city.name}</Popup> */}
                             </Marker>
                         );
                     })}
