@@ -3,14 +3,13 @@ import "./mainSearchBar.scss";
 import mapPointer from "../../assets/mapPointer.svg";
 import useSearch from "../../hooks/useSearch";
 import { ISearchbarProps } from "../../interfaces/searchBar";
-import { gql, useQuery } from "@apollo/client";
-import { getPOIS } from "../../graphql/pointOfInterest.server";
+import { useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
 
 export function MainSearchBar({ placeholder }: ISearchbarProps) {
   const [search, setSearch] = useState<string>("");
   const { loading, error, data } = useQuery(getCities);
-  console.log("🚀 ~ file: MainSearchBar.tsx:13 ~ MainSearchBar ~ data:", data);
+  console.log("🚀 ~ file: MainSearchBar.tsx:12 ~ MainSearchBar ~ data:", data);
 
   const filteredCityData = useSearch(search, data?.Cities);
 
