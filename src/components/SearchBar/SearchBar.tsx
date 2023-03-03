@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
-import "./mainSearchBar.scss";
-import mapPointer from "../../assets/mapPointer.svg";
+import "./searchBar.scss";
+import mapPointer from "../../assets/images/mapPointer.svg";
 
 interface IData {
 	link: string;
@@ -10,9 +10,10 @@ interface IData {
 interface IProps {
 	placeholder: string;
 	data: IData[];
+	className: string;
 }
 
-export function MainSearchBar({ placeholder, data }: IProps) {
+export function SearchBar({ placeholder, data }: IProps) {
 	const [filteredRow, setFilteredRow] = useState<IData[]>([]);
 
 	const handleFilter = (event: ChangeEvent<HTMLInputElement>) => {

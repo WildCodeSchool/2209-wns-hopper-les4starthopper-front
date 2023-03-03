@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
-import Signin from "../../components/ConnexionBtn/SignIn";
 import Logo from "../Logo/Logo";
-import { MainSearchBar } from "../SearchBar/MainSearchBar";
+import { SearchBar } from "../SearchBar/SearchBar";
 import "./navBar.scss";
 import DocData from "../Data.json";
-import { ModalAuth } from "../ModalAuth/ModalAuth";
+
+//import { ModalAuth } from "../ModalAuth/ModalAuth";
+import { Modal } from "../ModalAuth/Modal";
+import { log } from "console";
+import Signin from "../ConnexionBtn/SignIn";
 
 export const links = [
-  { label: "Accueil", path: "/" },
-  { label: "Villes", path: "/cities" },
-  { label: "Contact", path: "/contact" },
+	{ label: "Accueil", path: "/" },
+	{ label: "Villes", path: "/cities" },
+	{ label: "Contact", path: "/contact" },
 ];
 
 interface IProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function NavBar() {
+export default function NavBar({ ModalVisible, visible }: any) {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [screenXWidth, setScreenXWidth] = useState(window.innerWidth);
-
-  const toggleSmallDevice = () => {
-    setToggleMenu(!toggleMenu);
-  };
 
   useEffect(() => {
     const changeWidth = () => {
@@ -42,29 +41,44 @@ export default function NavBar() {
     };
   }, []);
 
+  const handleShowModal = () => {
+    ModalVisible(!visible);
+  };
+
   return (
     <nav className="navBar">
       {(toggleMenu || screenXWidth > 1060) && (
         <div className="navBar__mainbox">
           <Logo />
 
-          <ul className={"navBar__mainbox__list"}>
-            {links.map((link) => (
-              <CustomLink to={link.path} key={link.label}>
-                {link.label}
-              </CustomLink>
-            ))}
-          </ul>
-          <Signin />
-        </div>
-      )}
-      {window.innerWidth < 992 && (
-        <button onClick={toggleSmallDevice} className="navBar__burgerCross">
-          X
-        </button>
-      )}
-    </nav>
-  );
+					<ul className={"navBar__mainbox__list"}>
+						{links.map((link) => (
+							<CustomLink to={link.path} key={link.label}>
+								{link.label}
+							</CustomLink>
+						))}
+					</ul>
+
+					<div className='topBar'>
+						<SearchBar
+							className='navbarSearchbar'
+							placeholder='Entrez'
+							data={[]}
+						/>
+					</div>
+
+					<Signin />
+				</div>
+			)}
+			{window.innerWidth < 992 && (
+				<button
+					className='navBar__burgerCross'
+				>
+					X
+				</button>
+			)}
+		</nav>
+	);
 }
 
 function CustomLink({ to, children, ...props }: { to: string; children: any }) {

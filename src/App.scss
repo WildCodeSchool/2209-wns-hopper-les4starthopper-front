@@ -1,102 +1,102 @@
 body {
-	width: 100%;
-	font-family: sans-serif;
-	color: #222;
-	width: 100%;
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-		"Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  font-family: sans-serif;
+  color: #222;
+  width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .mainBox {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	max-width: 1900px;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1900px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
 }
 
 h1,
 h2,
 h3 {
-	margin: 0 0 0.35em;
+  margin: 0 0 0.35em;
 }
 
 h1 {
-	font-size: 40px;
+  font-size: 40px;
 }
 
 h2 {
-	font-size: 28px;
+  font-size: 28px;
 }
 
 h3 {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 h4 {
-	font-size: 15px;
+  font-size: 15px;
 }
 
 p {
-	margin: 0 0 1.15em;
+  margin: 0 0 1.15em;
 }
 
 .container {
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 24px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
 }
 
 .btn-modal {
-	border-radius: 5px;
-	border: none;
-	background-color: rgb(255, 255, 255);
-	box-shadow: 3px 2px 20px red;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 2px 20px red;
 }
 
 .votes:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /*Navigation global css*/
 
 .navBar li.active {
-	padding: 1px;
-	border-bottom: 2px solid orange;
+  padding: 1px;
+  border-bottom: 2px solid orange;
 }
 .items {
-	display: flex;
-	justify-content: center;
-	width: 70px;
-	margin-left: 5rem;
-	margin-right: 5rem;
-	color: black;
-	cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  color: black;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1060px) {
-	.items:nth-child(1) {
-		border-top: 1px solid #bdb3b3;
-		margin-top: 50px;
-	}
+  .items:nth-child(1) {
+    border-top: 1px solid #bdb3b3;
+    margin-top: 50px;
+  }
 
-	.items {
-		display: flex;
-		justify-content: center;
-		height: 50px;
-		width: 100%;
-		border-bottom: 1px solid #bdb3b3;
-		line-height: 50px;
-	}
+  .items {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #bdb3b3;
+    line-height: 50px;
+  }
 }
