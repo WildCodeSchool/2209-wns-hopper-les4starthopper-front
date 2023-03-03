@@ -10,6 +10,15 @@ export const getUsers = gql`
     }
   }
 `
+export const getMe = gql`
+query {
+  GetMe {
+    id
+    email
+    role
+  }
+}
+`
 export const signin = gql`
   mutation($password: String!, $email: String!){
     signin(password: $password, email: $email)
@@ -57,4 +66,3 @@ export const updateUser = gql`
     }
   }
 `
-

@@ -5,10 +5,20 @@ import useSearch from "../../hooks/useSearch";
 import { ISearchbarProps } from "../../interfaces/searchBar";
 import { useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
+import { getMe } from "../../graphql/users.server";
 
 export function MainSearchBar({ placeholder }: ISearchbarProps) {
   const [search, setSearch] = useState<string>("");
-  const { loading, error, data } = useQuery(getCities);
+  //const { loading, error, data } = useQuery(getCities);
+  const { loading, error, data } = useQuery(getMe);
+  console.log(
+    "🚀 ~ file: MainSearchBar.tsx:14 ~ MainSearchBar ~ error:",
+    error
+  );
+  console.log(
+    "🚀 ~ file: MainSearchBar.tsx:14 ~ MainSearchBar ~ loading:",
+    loading
+  );
   console.log("🚀 ~ file: MainSearchBar.tsx:12 ~ MainSearchBar ~ data:", data);
 
   const filteredCityData = useSearch(search, data?.Cities);
@@ -26,7 +36,7 @@ export function MainSearchBar({ placeholder }: ISearchbarProps) {
         </div>
       </div>
 
-      {filteredCityData.length !== 0 && (
+      {filteredCityData?.length !== 0 && (
         <div className="searchBar__result">
           <div className="searchBar__result__dataResult">
             {filteredCityData.map((value) => {
