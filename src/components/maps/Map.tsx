@@ -6,6 +6,9 @@ import { gql, useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { FaSearch } from 'react-icons/fa';
+import { renderToString } from 'react-dom/server';
+import pointer from '../../assets/images/pointerTest.png';
 
 export interface IData {
     longitude: string;
@@ -14,6 +17,12 @@ export interface IData {
     id: number;
 }
 
+const myIcon = L.icon({
+    iconUrl: pointer,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+  });
+
 export interface IProps {
     data: IData[];
 }
@@ -21,13 +30,17 @@ export interface IProps {
 function Map() {
     const { loading, error, data } = useQuery(getCities);
     console.log(data, error, loading);
-
-    const myIcon = L.icon({
-        iconUrl: 'path/to/my/icon.png',
-        iconSize: [38, 38],
-        iconAnchor: [22, 38],
-        popupAnchor: [-3, -76],
-        });
+    const test = renderToString(<FaSearch size={16} />)
+    // btoa = convertir en base64
+    // data:image/svg+xml;base64, pour indiquer que la chaîne encodée est une image SVG en base64
+    const searchIconUrl = 'data:image/svg+xml;base64,' + btoa(test);
+    const searchIcon = L.icon({
+        iconUrl: searchIconUrl,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+    });
+    
+    console.log(searchIcon.options.iconUrl);
 
     return (
         <div className="mapDiv">
@@ -55,7 +68,7 @@ function Map() {
                                 ]}
                                 icon={myIcon}
                             >
-                                {/* <Popup>{city.name}</Popup> */}
+                                <Popup>{city.name}</Popup>
                             </Marker>
                         );
                     })}
