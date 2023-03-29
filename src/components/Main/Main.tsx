@@ -15,8 +15,7 @@ import { SearchBar } from "../SearchBar/SearchBar";
 const Main = () => {
 	return (
 		<div>
-			<SearchBar
-				className='main-searchbar'
+			<SearchBar				
 				placeholder='Entrez votre requête ici...'
 				data={DocData}
 			/>

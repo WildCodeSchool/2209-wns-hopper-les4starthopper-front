@@ -10,7 +10,6 @@ interface IData {
 interface IProps {
 	placeholder: string;
 	data: IData[];
-	className: string;
 }
 
 export function SearchBar({ placeholder, data }: IProps) {

@@ -1,7 +1,7 @@
-.button_wrapper_styles {
-  position: relative;
-  z-index: 1;
-}
+// .button_wrapper_styles {
+//   position: relative;
+//   z-index: 1;
+// }
 
 .connexionBtn {
   display: flex;
@@ -10,15 +10,15 @@
   border: 0px;
   border-radius: 10px;
   font-size: 1rem;
-  background: #ffba08;
+  background: #42ff08;
 }
 
-.otherContentStyles {
-  position: relative;
-  background: red;
-  padding: 10px;
-  z-index: 2;
-}
+// .otherContentStyles {
+//   position: relative;
+//   background: red;
+//   padding: 10px;
+//   z-index: 2;
+// }
 
 // @media screen and (max-width: 1060px){
 //   .connexionBtn{
