@@ -6,7 +6,6 @@ import { gql, useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { FaSearch } from 'react-icons/fa';
 import { renderToString } from 'react-dom/server';
 import pointer from '../../assets/images/pointerTest.png';
 
@@ -29,11 +28,10 @@ export interface IProps {
 
 function Map() {
     const { loading, error, data } = useQuery(getCities);
-    console.log(data, error, loading);
-    const test = renderToString(<FaSearch size={16} />)
+    console.log(data, error, loading);   
     // btoa = convertir en base64
     // data:image/svg+xml;base64, pour indiquer que la chaîne encodée est une image SVG en base64
-    const searchIconUrl = 'data:image/svg+xml;base64,' + btoa(test);
+    const searchIconUrl = 'data:image/svg+xml;base64,' + btoa
     const searchIcon = L.icon({
         iconUrl: searchIconUrl,
         iconSize: [32, 32],
@@ -68,7 +66,7 @@ function Map() {
                                 ]}
                                 icon={myIcon}
                             >
-                                <Popup>{city.name}</Popup>
+                                {/* <Popup>{city.name}</Popup> */}
                             </Marker>
                         );
                     })}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import { SearchBar } from "../SearchBar/SearchBar";
 import "./navBar.scss";
 import DocData from "../Data.json";
 
@@ -58,14 +57,6 @@ export default function NavBar({ ModalVisible, visible }: any) {
 							</CustomLink>
 						))}
 					</ul>
-
-					<div className='topBar'>
-						<SearchBar
-							className='navbarSearchbar'
-							placeholder='Entrez'
-							data={[]}
-						/>
-					</div>
 
 					<Signin />
 				</div>
