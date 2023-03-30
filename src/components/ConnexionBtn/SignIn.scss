@@ -1,0 +1,27 @@
+.button_wrapper_styles {
+  position: relative;
+  z-index: 1;
+}
+
+.connexionBtn {
+  display: flex;
+  //posiion:absolute;
+  padding: 10px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #ffba08;
+}
+
+.otherContentStyles {
+  position: relative;
+  background: red;
+  padding: 10px;
+  z-index: 2;
+}
+
+// @media screen and (max-width: 1060px){
+//   .connexionBtn{
+//    display:none;
+//   }
+//  }

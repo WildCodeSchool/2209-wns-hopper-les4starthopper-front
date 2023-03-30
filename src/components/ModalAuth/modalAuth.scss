@@ -1,0 +1,124 @@
+/*TEST ZONE------------------*/
+
+.overlay_styles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.modal_styles {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff04;
+  padding: 50px;
+  z-index: 1000;
+}
+
+/*----------------------------*/
+
+.modalAuth-component {
+  position: fixed;
+  opacity: 0.9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #026a5a19;
+  padding: 50px;
+  z-index: 1000;
+}
+
+.close {
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
+}
+
+.modalAuth-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 500px;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(246, 240, 240, 0.24) 0px 3px 8px;
+
+  .modalAuth__title {
+    font-weight: 600;
+  }
+
+  .modalAuth__mode {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  .modalAuth__span {
+    cursor: pointer;
+    color: #ffba08;
+    text-decoration: underline;
+  }
+
+  .modalAuth__input input {
+    border: solid rgb(87, 90, 227) 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 90%;
+  }
+
+  .modalAuth__signup-input,
+  .modalAuth__signin-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+
+  .modalAuth__label {
+    display: block;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .modalAuth__submit button {
+    padding: 10px;
+    margin-top: 1em;
+    margin-bottom: 5px;
+    width: 50%;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
+    background: #ffba08;
+    color: white;
+  }
+
+  &__input {
+    & input {
+      width: 80%;
+      height: 3em;
+      border-radius: 5px;
+      border: 1px solid rgb(207, 199, 199);
+    }
+  }
+
+  .modalAuth__submit {
+    &__forgotPassword {
+      text-align: start;
+      margin-left: 2em;
+      margin-top: 10px;
+    }
+    &__forgotPassword a {
+      font-size: 18px;
+      text-decoration: underline;
+      color: #032425;
+    }
+  }
+}

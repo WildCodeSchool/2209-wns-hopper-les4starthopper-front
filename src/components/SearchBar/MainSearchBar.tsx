@@ -1,0 +1,59 @@
+import { useState } from "react";
+import "./mainSearchBar.scss";
+import mapPointer from "../../assets/mapPointer.svg";
+import useSearch from "../../hooks/useSearch";
+import { ISearchbarProps } from "../../interfaces/searchBar";
+import { useQuery } from "@apollo/client";
+import { getCities } from "../../graphql/city.server";
+import { getMe } from "../../graphql/users.server";
+
+export function MainSearchBar({ placeholder }: ISearchbarProps) {
+  const [search, setSearch] = useState<string>("");
+  //const { loading, error, data } = useQuery(getCities);
+  const { loading, error, data } = useQuery(getMe);
+  console.log(
+    "🚀 ~ file: MainSearchBar.tsx:14 ~ MainSearchBar ~ error:",
+    error
+  );
+  console.log(
+    "🚀 ~ file: MainSearchBar.tsx:14 ~ MainSearchBar ~ loading:",
+    loading
+  );
+  console.log("🚀 ~ file: MainSearchBar.tsx:12 ~ MainSearchBar ~ data:", data);
+
+  const filteredCityData = useSearch(search, data?.Cities);
+
+  return (
+    <div className="searchBar">
+      <div className="searchBar__input">
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          type="text"
+          placeholder={placeholder}
+        />
+        <div className="searchBar__icon">
+          <img src={mapPointer} alt="mapsearch" />
+        </div>
+      </div>
+
+      {filteredCityData?.length !== 0 && (
+        <div className="searchBar__result">
+          <div className="searchBar__result__dataResult">
+            {filteredCityData.map((value) => {
+              return (
+                <a
+                  href={value.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={value.id}
+                >
+                  {value.name}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,24 @@
+.welcomeTitle{
+  display:inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  margin-top:2em; 
+  font-size:2em; 
+  font-weight: 700;
+  text-transform: uppercase;
+  color:#032425;  
+}
+
+.welcomeTitle span {
+  
+  color: #026a5a;
+}
+
+@media screen and (max-width: 750px) {
+	.welcomeTitle  {	
+		font-size:1.3em;	
+    height: 120px;	
+	}
+}
