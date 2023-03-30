@@ -1,13 +1,13 @@
-import React from "react";
-import "./logo.scss";
-import CityLogo from "../../assets/images/cityGuideLogo.png";
+import React from 'react'
+import './logo.css'
+import CityLogo from '../../assets/cityGuideLogo.png'
 
 const Logo = () => {
   return (
-    <div className="logoBox">
+    <div className='logoBox'>
       <img src={CityLogo} alt="" />
     </div>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

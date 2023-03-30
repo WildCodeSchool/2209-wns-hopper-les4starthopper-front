@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Form.scss";
+import "./Form.css";
 type App = {
   login: string;
   bouttonLabel: string;
