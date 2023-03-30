@@ -12,7 +12,7 @@ jobs:
         run: npm i && npm test
   docker:
     needs: test-front
-    if: github.ref == 'refs/heads/modal'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
