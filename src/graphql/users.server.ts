@@ -6,24 +6,35 @@ export const getUsers = gql`
       id
       email
       password
-      role    
+      role
     }
   }
-`
+`;
 export const signin = gql`
-  mutation($password: String!, $email: String!){
+  mutation ($password: String!, $email: String!) {
     signin(password: $password, email: $email)
   }
-`
+`;
+
+export const getMe = gql`
+  query GetMe {
+    GetMe {
+      id
+      email
+      role
+    }
+  }
+`;
+
 export const findUser = gql`
-  query($userId: ID!) {
+  query ($userId: ID!) {
     FindUser(id: $userId) {
       id
       email
       role
     }
   }
-`
+`;
 export const createUser = gql`
   mutation CreateUser($data: UserInput!) {
     createUser(data: $data) {
@@ -31,23 +42,23 @@ export const createUser = gql`
       password
     }
   }
-`
+`;
 export const deleteUser = gql`
   mutation Mutation($deleteUserId: ID!) {
     deleteUser(id: $deleteUserId) {
-      id  
+      id
     }
   }
-`
+`;
 export const deleteUsers = gql`
   mutation {
     deleteUsers {
       id
     }
   }
-`
+`;
 export const updateUser = gql`
-  mutation($updateUserData2: UserInput!, $updateUserId: ID!) {
+  mutation ($updateUserData2: UserInput!, $updateUserId: ID!) {
     updateUser(data: $updateUserData2, id: $updateUserId) {
       id
       email
@@ -56,5 +67,4 @@ export const updateUser = gql`
       updated_at
     }
   }
-`
-
+`;

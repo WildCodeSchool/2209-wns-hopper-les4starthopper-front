@@ -1,8 +1,9 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, useEffect } from "react";
 import "./modalAuth.scss";
-import { createUser } from "../../graphql/users.server";
-import { useMutation } from "@apollo/client";
+import { createUser, getMe, signin } from "../../graphql/users.server";
+import { useMutation, useQuery } from "@apollo/client";
 import Modal from "../Modal/Modal";
+import { IUser } from "../../graphql/interfaces/user";
 
 export interface IProps {
   open: boolean;
@@ -14,9 +15,57 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [token, setToken] = useState<null | string>(null);
+  const [user, setUser] = useState<null | IUser>(null);
+  const [wrongCredentials, setWrongCredentials] = useState(false);
+  const [
+    handleSignupMutation,
+    { data: signupData, loading: signupLoading, error: signupError },
+  ] = useMutation(createUser);
 
-  const [handleSignupMutation, { data, loading, error }] =
-    useMutation(createUser);
+  const { data, refetch } = useQuery(getMe);
+  console.log("🚀 ~ file: ModalAuth.tsx:27 ~ ModalAuth ~ data:", data);
+
+  useEffect(() => {
+    if (data) {
+      if (data.getMe) {
+        setUser(data.getMe);
+      } else {
+        setUser(null);
+      }
+    }
+  }, [data]);
+
+  const [handleSigninMutation, { data: signinData, loading, error }] =
+    useMutation(signin);
+
+  const handleSignin = async () => {
+    try {
+      const { data } = await handleSigninMutation({
+        variables: {
+          email,
+          password,
+        },
+      });
+      if (data.signin) {
+        localStorage.setItem("token", data.signin);
+        setToken(data.signin);
+        setEmail("");
+        setPassword("");
+        setWrongCredentials(false);
+      } else {
+        setWrongCredentials(true);
+      }
+    } catch {}
+  };
+
+  const infoGetMe = useQuery(getMe, {
+    fetchPolicy: "network-only",
+  });
+  console.log(
+    "🚀 ~ file: ModalAuth.tsx:65 ~ ModalAuth ~ infoGetMe:",
+    infoGetMe
+  );
 
   const handleSignup = async () => {
     try {
@@ -118,7 +167,7 @@ export const ModalAuth = ({ open, onClose, ...props }: IProps) => {
                 />
               </div>
               <div className="modalAuth__submit">
-                <button onClick={handleSignup}>Connexion</button>
+                <button onClick={handleSignin}>Connexion</button>
               </div>
             </div>
           </>
