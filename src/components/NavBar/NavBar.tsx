@@ -9,11 +9,12 @@ import DocData from "../Data.json";
 import { Modal } from "../ModalAuth/Modal";
 import { log } from "console";
 import Signin from "../ConnexionBtn/SignIn";
+import { useUser } from "../../context/UserContext";
 
 export const links = [
-	{ label: "Accueil", path: "/" },
-	{ label: "Villes", path: "/cities" },
-	{ label: "Contact", path: "/contact" },
+  { label: "Accueil", path: "/" },
+  { label: "Villes", path: "/cities" },
+  { label: "Contact", path: "/contact" },
 ];
 
 interface IProps {
@@ -23,6 +24,8 @@ interface IProps {
 export default function NavBar({ ModalVisible, visible }: any) {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [screenXWidth, setScreenXWidth] = useState(window.innerWidth);
+
+  const { logout } = useUser();
 
   useEffect(() => {
     const changeWidth = () => {
@@ -51,34 +54,31 @@ export default function NavBar({ ModalVisible, visible }: any) {
         <div className="navBar__mainbox">
           <Logo />
 
-					<ul className={"navBar__mainbox__list"}>
-						{links.map((link) => (
-							<CustomLink to={link.path} key={link.label}>
-								{link.label}
-							</CustomLink>
-						))}
-					</ul>
+          <ul className={"navBar__mainbox__list"}>
+            {links.map((link) => (
+              <CustomLink to={link.path} key={link.label}>
+                {link.label}
+              </CustomLink>
+            ))}
+          </ul>
 
-					<div className='topBar'>
+          {/* <div className='topBar'>
 						<SearchBar
 							className='navbarSearchbar'
 							placeholder='Entrez'
 							data={[]}
 						/>
-					</div>
+					</div> */}
 
-					<Signin />
-				</div>
-			)}
-			{window.innerWidth < 992 && (
-				<button
-					className='navBar__burgerCross'
-				>
-					X
-				</button>
-			)}
-		</nav>
-	);
+          <Signin />
+        </div>
+      )}
+      {window.innerWidth < 992 && (
+        <button className="navBar__burgerCross">X</button>
+      )}
+      <button onClick={logout}>logout</button>
+    </nav>
+  );
 }
 
 function CustomLink({ to, children, ...props }: { to: string; children: any }) {
