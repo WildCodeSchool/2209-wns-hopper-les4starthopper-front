@@ -59,13 +59,13 @@ export default function NavBar({ ModalVisible, visible }: any) {
 						))}
 					</ul>
 
-					<div className='topBar'>
+					{/* <div className='topBar'>
 						<SearchBar
 							className='navbarSearchbar'
 							placeholder='Entrez'
 							data={[]}
 						/>
-					</div>
+					</div> */}
 
 					<Signin />
 				</div>
