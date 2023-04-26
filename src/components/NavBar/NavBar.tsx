@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import { SearchBar } from "../SearchBar/SearchBar";
@@ -10,13 +10,8 @@ import { Modal } from "../ModalAuth/Modal";
 import { log } from "console";
 import Signin from "../ConnexionBtn/SignIn";
 import { useUser } from "../../context/UserContext";
-
-export const links = [
-  { label: "Accueil", path: "/" },
-  { label: "Villes", path: "/cities" },
-  { label: "Contact", path: "/contact" },
-];
-
+import { useQuery } from "@apollo/client";
+import { getMe } from "../../graphql/users.server";
 interface IProps {
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
@@ -24,11 +19,25 @@ interface IProps {
 export default function NavBar({ ModalVisible, visible }: any) {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [screenXWidth, setScreenXWidth] = useState(window.innerWidth);
+  const [links, setLinks] = useState([
+    { label: "Accueil", path: "/" },
+    { label: "Villes", path: "/cities" },
+    { label: "Contact", path: "/contact" },
+  ]);
+
+  const { data }  = useQuery(getMe);
+
+  const isAdmin = useMemo(() => {
+      return data ? data.getRole === 1 : false;
+  }, [data])
 
   const { logout } = useUser();
 
+  const pushLinks = useCallback((link: { label: string; path: string }) => {
+    setLinks([...links, link]);
+  }, [])
   useEffect(() => {
-    const changeWidth = () => {
+    const changeWidth = () => { 
       setScreenXWidth(window.innerWidth);
 
       if (window.innerWidth > 1060) {
@@ -36,10 +45,14 @@ export default function NavBar({ ModalVisible, visible }: any) {
       }
     };
 
+    if (isAdmin) {
+      pushLinks({ label: "back-office", path: "/back-office" })
+    };
+    
     window.addEventListener("resize", changeWidth);
 
     return () => {
-      //to avoid to listen to for nothing
+
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
@@ -55,8 +68,8 @@ export default function NavBar({ ModalVisible, visible }: any) {
           <Logo />
 
           <ul className={"navBar__mainbox__list"}>
-            {links.map((link) => (
-              <CustomLink to={link.path} key={link.label}>
+            {links.map((link, index) => (
+              <CustomLink to={link.path} key={index}>
                 {link.label}
               </CustomLink>
             ))}

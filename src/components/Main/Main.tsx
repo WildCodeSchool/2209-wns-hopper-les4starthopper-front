@@ -11,6 +11,7 @@ import Contact from "../Contact/Contact";
 import Cities from "../Cities/Cities";
 import Signup from "../Signup";
 import { SearchBar } from "../SearchBar/SearchBar";
+import BackOffice from "../../pages/BackOffice";
 
 const Main = () => {
 	return (
@@ -26,10 +27,12 @@ const Main = () => {
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/cities' element={<Cities />} />
 					<Route path='/signup' element={<Signup />} />
+					<Route path='/back-office' element={<BackOffice />} />
 				</Routes>
 			</div>
 		</div>
 	);
 };
+
 
 export default Main;
