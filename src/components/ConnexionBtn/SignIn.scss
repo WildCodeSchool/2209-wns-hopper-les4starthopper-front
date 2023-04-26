@@ -5,12 +5,17 @@
 
 .connexionBtn {
   display: flex;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 15px;
   border: 0px;
   border-radius: 10px;
-  font-size: 1rem;
-  background: #ffba08;
+  font-size: 1.4rem;
   margin-top:6px;
+  margin-right: 4rem;
+  background: #1B1332;
+  color:white;
 }
 
 .otherContentStyles {

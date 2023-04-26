@@ -6,9 +6,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width:1900px;
+	width:2900px;
 	height: 150px;
 	margin-bottom: 1rem;	
+	background: white;
 	&__input {
 		display: flex;
 		position: relative;
@@ -24,7 +25,7 @@
 			width: 55em;
 			margin-bottom: 1rem;
 			height: 3.5em;
-			border: 3px solid #ffba08;
+			border: 3px solid #29A796;
 			border-radius: 5rem;
 			font-size: 1em;
 			outline: none;
