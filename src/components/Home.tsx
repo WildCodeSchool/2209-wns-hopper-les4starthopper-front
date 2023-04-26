@@ -1,5 +1,4 @@
 import Map from "./Maps/Map";
-import "./Home.scss";
 import WelcomeTitle from "./WelcomeTitle/WelcomeTitle";
 
 function Home() {

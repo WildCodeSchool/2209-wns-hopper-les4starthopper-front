@@ -1,7 +1,7 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import DocData from "../../components/Data.json";
 import Map from "../Maps/Map";
 
@@ -13,14 +13,17 @@ import Signup from "../Signup";
 import { SearchBar } from "../SearchBar/SearchBar";
 
 const Main = () => {
+	const { pathname } = useLocation();
 	return (
-		<div>
-			<SearchBar
-				className='main-searchbar'
-				placeholder='Entrez votre requête ici...'
-				data={DocData}
-			/>
+		<>
 			<div className='mainContainer'>
+				{pathname === "/contact" ? null : (
+					<SearchBar
+						className='main-searchbar'
+						placeholder='Entrez votre requête ici...'
+						data={DocData}
+					/>
+				)}
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/contact' element={<Contact />} />
@@ -28,7 +31,7 @@ const Main = () => {
 					<Route path='/signup' element={<Signup />} />
 				</Routes>
 			</div>
-		</div>
+		</>
 	);
 };
 

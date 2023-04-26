@@ -6,10 +6,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width:1900px;
 	height: 150px;
-	margin-bottom: 1rem;
-	width: 100%;
-	
+	margin-bottom: 1rem;	
 	&__input {
 		display: flex;
 		position: relative;
