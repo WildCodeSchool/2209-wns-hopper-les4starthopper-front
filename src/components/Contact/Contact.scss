@@ -6,4 +6,11 @@
   height: calc(100vh - 125px);
   background: url("../../assets/images/valentinAntonucci_unsplash.jpg");
   background-size: cover;	
+  // background-position: center;
+
+    &__form{
+      background:white;
+      padding: 2rem 2rem;
+      border-radius: 10px;
+    }
 }
