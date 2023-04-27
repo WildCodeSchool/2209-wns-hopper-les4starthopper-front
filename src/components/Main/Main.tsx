@@ -11,6 +11,7 @@ import Contact from "../Contact/Contact";
 import Cities from "../Cities/Cities";
 import Signup from "../Signup";
 import { SearchBar } from "../SearchBar/SearchBar";
+import Footer from "../Footer/Footer";
 
 const Main = () => {
 	const { pathname } = useLocation();
@@ -31,6 +32,7 @@ const Main = () => {
 					<Route path='/signup' element={<Signup />} />
 				</Routes>
 			</div>
+			<Footer></Footer>
 		</>
 	);
 };
