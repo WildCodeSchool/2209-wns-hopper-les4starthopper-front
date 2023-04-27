@@ -1,4 +1,4 @@
-// import "./formInput.css";
+import "./formInput.scss";
 
 interface IProps {
   label: string
@@ -14,7 +14,7 @@ export const FormInput: React.FC<IProps> = ({
 	return (
 		<div className='formInput'>
 			<label>{label}</label>
-			<input {...inputProps} onChange={onChange} />
+			<input {...inputProps} onChange={onChange} className="formInput__input" />
 		</div>
 	);
 };

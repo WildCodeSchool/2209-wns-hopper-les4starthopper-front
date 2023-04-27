@@ -64,6 +64,7 @@ const Contact = () => {
 		setValues({ ...values, [e.target.name]: e.target.value });
 	};
 	return (
+		<section className="contactContainer">
 		<div className='contact'>
 			<form className="contact__form"onSubmit={handlesubmit}>
 				<h1>Contactez-nous</h1>
@@ -76,9 +77,10 @@ const Contact = () => {
 					/>
 				))}
 
-				<button>Submit</button>
+				<button className="contact__submit">Submit</button>
 			</form>
 		</div>
+		</section>
 	);
 };
 

@@ -1,16 +1,43 @@
 .contact {
-	display: flex;
+  display: flex;
 	align-items: center;
-	justify-content: center;
-  width:100%;
-  height: calc(100vh - 125px);
+	justify-content:end; 
+	// width: 2900px;
+	text-align: center;
+	height: 100vh;	
   background: url("../../assets/images/valentinAntonucci_unsplash.jpg");
-  background-size: cover;	
-  // background-position: center;
+	background-size: cover;
+	// background-position: center;
 
-    &__form{
-      background:white;
-      padding: 2rem 2rem;
-      border-radius: 10px;
-    }
+
+	&__form {
+		background: rgba(255, 255, 255, 0.637);
+		padding: 2rem 2rem;
+		border-radius: 10px;
+    margin-right: 5rem;
+    margin-top: -5rem;
+	}
+
+	&__submit {
+		width: 70%;
+		height: 50px;
+		font-size: 25px;
+    font-weight: bold;
+		border: none;
+		border-radius: 10px;
+    background:#29a796;
+    color:white;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+	}
+}
+
+.contact input {
+	height: 50px;
+}
+
+.mainContainer{
+  width: 1800px; 
+  background:whie; 
 }
