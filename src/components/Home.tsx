@@ -6,7 +6,7 @@ function Home() {
 	return (
 		<>
 			<div className='home'>
-			{/* <WelcomeTitle /> */}
+			<WelcomeTitle />
 				<Map />
 			</div>
 		</>

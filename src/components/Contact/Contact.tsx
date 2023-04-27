@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./contact.scss";
 import { FormInput } from "../FormInput/FormInput";
 
-type InputName = "username" | "email" | "message" | "password" | "confirmPassword"
+type InputName =
+	| "username"
+	| "email"
+	| "message"
+	| "password"
+	| "confirmPassword";
 
 export interface UserFormState {
 	username: string;
@@ -53,7 +58,6 @@ const Contact = () => {
 			placeholder: "Ecrivez votre demande ici...",
 			label: "Message",
 		},
-
 	];
 
 	const handlesubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -64,22 +68,23 @@ const Contact = () => {
 		setValues({ ...values, [e.target.name]: e.target.value });
 	};
 	return (
-		<section className="contactContainer">
-		<div className='contact'>
-			<form className="contact__form"onSubmit={handlesubmit}>
-				<h1>Contactez-nous</h1>
-				{inputs.map((input) => (
-					<FormInput
-						key={input.id}
-						{...input}
-						value={values[input.name]}
-						onChange={onChange}
-					/>
-				))}
-
-				<button className="contact__submit">Submit</button>
-			</form>
-		</div>
+		<section className='contactContainer'>
+			<div className='contact'>
+				<form className='contact__form' onSubmit={handlesubmit}>
+					<h1>Contactez-nous</h1>
+					{inputs.map((input) => (
+						<FormInput
+							key={input.id}
+							{...input}
+							value={values[input.name]}
+							onChange={onChange}
+						/>
+					))}
+					<div className="contact__btn">
+						<button className='contact__submit'>Submit</button>
+					</div>
+				</form>
+			</div>
 		</section>
 	);
 };

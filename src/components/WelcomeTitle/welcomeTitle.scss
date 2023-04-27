@@ -1,5 +1,19 @@
+
+.title{
+  display:flex;
+  position:absolute;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+  height:150px;
+  top:15rem;
+ 
+}
+
+
 .welcomeTitle{
   display:inline-block;
+  position:absolute;
   text-align: center;
   justify-content: center;
   width: 100%;
@@ -11,8 +25,7 @@
   color:#032425;  
 }
 
-.welcomeTitle span {
-  
+.welcomeTitle span {  
   color: #026a5a;
 }
 
