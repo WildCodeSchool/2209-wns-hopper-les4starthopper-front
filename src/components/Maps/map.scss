@@ -1,12 +1,10 @@
 .mapDiv {
-	display:flex;
-	justify-content: center;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 10rem;
+	display: flex;
+	position: relative;
+	margin-top: 12rem;
 	margin-bottom: 10rem;
-	width: 1100px;
-	height: 700px;
+	width: 1200px;
+	height: 600px;
 
 	&__container {
 		width: 100%;
@@ -26,6 +24,46 @@
 		left: 25px;
 	}
 }
+
+/*-------------------------------*/
+
+.bicycle {
+	display: flex;
+	position: absolute;
+	justify-content: space-between;
+	align-items: center;
+	left: 45rem;
+	top: 150px;
+	width: 800px;
+	height: 500px;
+	background: rgba(0, 0, 255, 0);
+	z-index: 10;
+
+	& img {
+		width: 600px;
+		height: auto;
+	}
+}
+
+.city {
+	display: flex;
+	position: absolute;
+	justify-content: space-between;
+	align-items: center;
+	left: -30rem;
+	top: -12rem;
+	width: 500px;
+	height: 800px;
+	background: rgba(67, 67, 182, 0);	
+	z-index: 10;
+
+	& img {
+		width: 500px;
+		height: auto;
+	}
+}
+
+/*-------------------------------*/
 
 @media screen and (max-width: 1560px) {
 	.mapDiv {

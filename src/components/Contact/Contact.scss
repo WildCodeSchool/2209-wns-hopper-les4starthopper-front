@@ -1,9 +1,9 @@
 .contact {
-  display: flex;
+	display: flex;
 	align-items: center;
-	justify-content:end; 
+	justify-content: end;
 	// width: 2900px;
-	height:100vh;
+	height: 100vh;
 	text-align: center;
 	background: url("../../assets/images/brass_valentin_antonucci_unsplash.jpg");
 	background-size: cover;
@@ -12,47 +12,45 @@
 
 	// background-position: center;
 
-
 	&__form {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		width:850px;
-		height: 900px;
+		width: 650px;
+		height: 700px;
 		padding: 2rem 2rem;
 		border-radius: 10px;
-    margin-right: 5rem;
-    margin-top: -5rem;
+		margin-right: 10rem;
+		margin-top: -5rem;
 		background: rgba(255, 255, 255, 0.637);
 
-		label{
-			font-size:40px;
+		label {
+			font-size: 40px;
 			font-weight: bold;
-			color:#01201ce0;
+			color: #01201ce0;
 			text-align: left;
 			margin-left: 0.5rem;
 		}
 	}
 
-	&__btn{
+	&__btn {
 		display: flex;
 		justify-content: end;
 		align-items: center;
 		width: 600px;
 	}
 
-	&__submit {	
+	&__submit {
 		width: 150px;
 		height: 60px;
-	
 		font-size: 25px;
-    font-weight: bold;
+		font-weight: bold;
 		border: none;
 		border-radius: 10px;
-    background:#29a796e0;
-    color:white;   
-    margin-bottom: 0.5rem;
+		background: #29a796e0;
+		color: white;
+		margin-bottom: 0.5rem;
 		cursor: pointer;
 	}
 }
@@ -61,7 +59,7 @@
 	height: 50px;
 }
 
-.mainContainer{
-  width: 1800px; 
-  background:whie; 
+.mainContainer {
+	width: 2000px;
+	background: whie;
 }
