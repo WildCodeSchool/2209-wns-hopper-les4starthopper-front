@@ -30,9 +30,9 @@ const Main = () => {
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/cities' element={<Cities />} />
 					<Route path='/signup' element={<Signup />} />
-				</Routes>
+				</Routes>	
+			<Footer></Footer>		
 			</div>
-			<Footer></Footer>
 		</>
 	);
 };

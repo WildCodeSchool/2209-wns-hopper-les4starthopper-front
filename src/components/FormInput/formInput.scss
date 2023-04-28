@@ -1,7 +1,7 @@
 .formInput {
 	display: flex;
 	flex-direction: column;
-	width: 600px;
+	width: 500px;
 
 
 	&__input {
@@ -14,5 +14,5 @@
 }
 
 input[type=textarea]{	
-	height:200px;
+	height:150px;
 }
