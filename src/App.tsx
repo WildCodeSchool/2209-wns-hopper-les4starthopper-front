@@ -16,24 +16,22 @@ import Main from "./components/Main/Main";
 // import Signup from "./components/Signup";
 
 const client = new ApolloClient({
-  uri: "http://localhost:5070",
+  uri: "staging.api.hopper5.wns.wilders.dev",
   cache: new InMemoryCache(),
 });
 
 function App() {
   return (
     <ApolloProvider client={client}>
-     
-        <NavBar />
-        <Main />
+      <NavBar />
+      <Main />
 
-        {/* <MainSearchBar
+      {/* <MainSearchBar
           placeholder="Entrez votre requête ici..."
           data={DocData}
         /> */}
-		
 
-				{/* <div className='mainContainer'>
+      {/* <div className='mainContainer'>
 					<Routes>
 						<Route path='/home' element={<Home />} />
 						<Route path='/' element={<Map />} />						
@@ -42,9 +40,8 @@ function App() {
 						<Route path='/signup' element={<Signup />} />
 					</Routes>
 				</div> */}
-
-		</ApolloProvider>
-	);
+    </ApolloProvider>
+  );
 }
 
 export default App;
