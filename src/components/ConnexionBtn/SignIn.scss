@@ -1,21 +1,25 @@
-.button_wrapper_styles {
-  position: relative;
+.button_wrapper_styles {  
   z-index: 1;
 }
 
 .connexionBtn {
   display: flex;
-  //posiion:absolute;
-  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 15px;
   border: 0px;
   border-radius: 10px;
-  font-size: 1rem;
-  background: #ffba08;
+  font-size: 1.4rem;
+  margin-top:6px;
+  margin-right: 4rem;
+  border: solid 2px #29a796;
+  background: #29a796;
+  color:white;
 }
 
 .otherContentStyles {
   position: relative;
-  background: red;
   padding: 10px;
   z-index: 2;
 }

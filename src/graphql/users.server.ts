@@ -58,3 +58,14 @@ export const updateUser = gql`
   }
 `
 
+export const getMe = gql`
+query {
+  GetMe {
+    id
+    email
+    role
+    username
+  }
+}
+`
+
