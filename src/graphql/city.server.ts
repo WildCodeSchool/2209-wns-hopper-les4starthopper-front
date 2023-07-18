@@ -25,13 +25,33 @@ export const getCityByName = gql`
 `;
 
 export const getCity = gql`
-  query city($cityId: ID!) {
+  query ($cityId: ID!) {
     city(id: $cityId) {
       id
+      name
       latitude
       longitude
-      name
-      createdById
+      pointOfInterests {
+        id
+        adress
+        description
+        latitude
+        longitude
+        name
+        pictures {
+          id
+          created_at
+          url
+          createdBy {
+            id
+          }
+        }
+        categories {
+          id
+          name
+          icon
+        }
+      }
     }
   }
 `;

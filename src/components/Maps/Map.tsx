@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./map.scss";
@@ -6,6 +6,7 @@ import { gql, useQuery } from "@apollo/client";
 import { getCities } from "../../graphql/city.server";
 import L from "leaflet";
 import { useNavigate } from "react-router-dom";
+import { POIsContext } from "../../context/POIsContext";
 
 export interface IData {
   longitude: string;
@@ -22,9 +23,12 @@ function Map() {
   const { loading, error, data } = useQuery(getCities);
   console.log(data, error, loading);
 
-  const navigate = useNavigate();
+  const { onCityChange } = useContext(POIsContext);
+
+  /*  const navigate = useNavigate(); */
   const handleMarkerClick = (city: IData) => {
-    navigate(`/city/${city.id}`, { state: { cityData: city } });
+    onCityChange(city.id);
+    /* navigate(`/city/${city.id}`, { state: { cityData: city } }); */
   };
 
   return (
