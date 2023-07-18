@@ -16,7 +16,7 @@ import Main from "./components/Main/Main";
 // import Signup from "./components/Signup";
 
 const client = new ApolloClient({
-  uri: "staging.api.hopper5.wns.wilders.dev",
+  uri: "https://staging.api.hopper5.wns.wilders.dev",
   cache: new InMemoryCache(),
 });
 

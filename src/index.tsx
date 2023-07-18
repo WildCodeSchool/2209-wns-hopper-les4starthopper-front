@@ -14,7 +14,7 @@ import { UserProvider } from "./context/UserContext";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "staging.api.hopper5.wns.wilders.dev",
+  uri: "https://staging.api.hopper5.wns.wilders.dev",
 });
 
 // const socket = socketIO.connect(SERVER, {
