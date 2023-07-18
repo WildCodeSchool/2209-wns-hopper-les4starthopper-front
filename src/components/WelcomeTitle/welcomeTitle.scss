@@ -1,0 +1,34 @@
+.title {
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	width: 1500px;
+	height: 150px;
+	top: 15rem;
+}
+
+.welcomeTitle {
+	display: inline-block;
+	position: absolute;
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+	height: 150px;
+	margin-top: -1.5em;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #032425;
+}
+
+.welcomeTitle span {
+	color: #026a5a;
+}
+
+@media screen and (max-width: 750px) {
+	.welcomeTitle {
+		font-size: 1.3em;
+		height: 120px;
+	}
+}

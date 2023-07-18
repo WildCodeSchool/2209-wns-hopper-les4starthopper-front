@@ -1,12 +1,14 @@
 import React from "react";
-import s from "./welcomeTitle.module.css";
+import "./welcomeTitle.scss";
 
 const WelcomeTitle = () => {
 	return (
-		<div className={s.welcomeTitle}>
+		<section className="title">
+		<div className="welcomeTitle">
 			<span>Bienvenue sur City Guide !</span> Voyage sans contraintes{" "}
 			<br /> à travers notre carte de France !
 		</div>
+		</section>
 	);
 };
 

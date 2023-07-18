@@ -1,0 +1,63 @@
+
+.contact {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	// width: 2900px;
+	height:850px;
+	
+	text-align: center;
+	background: url("../../assets/images/brass_valentin_antonucci_unsplash.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+
+	// background-position: center;
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 600px;
+		height: 650px;
+		padding: 2rem 2rem;
+		border-radius: 10px;
+		margin-right: 10rem;
+		margin-top: 1rem;
+		background: rgba(255, 255, 255, 0.637);
+
+		label {
+			font-size: 40px;
+			font-weight: bold;
+			color: #01201ce0;
+			text-align: left;
+			margin-left: 0.5rem;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		width: 450px;
+	}
+
+	&__submit {
+		width: 120px;
+		height: 60px;
+		font-size: 25px;
+		font-weight: bold;
+		border: none;
+		border-radius: 10px;
+		background: #29a796e0;
+		color: white;
+		margin-bottom: 2.5rem;
+		cursor: pointer;
+	}
+}
+
+.contact input {
+	height: 50px;
+}
+

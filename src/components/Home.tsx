@@ -1,11 +1,11 @@
+import './home.scss'
 import Map from "./Maps/Map";
-import "./Home.scss";
 import WelcomeTitle from "./WelcomeTitle/WelcomeTitle";
 
 function Home() {
 	return (
 		<>
-			<div className='mainContainer'>
+			<div className='home'>
 			<WelcomeTitle />
 				<Map />
 			</div>
